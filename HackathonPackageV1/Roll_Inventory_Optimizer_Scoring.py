@@ -646,7 +646,7 @@ def officialScorer(situationRoot, situationDate):
     # print("Finished")
     return (totalScore, scoringBreakdown)
     
-situationDate='2024-09-06 Week 3'
+# situationDate='2024-09-06 Week 3'
 #situationDate='2024-10-09'
 # situationRoot='d:\\otapps\\inventory_dev\\root\\DataCache\\OptimizerSituations'#OLD
 date = [
@@ -674,4 +674,3 @@ print("\n\n------------------------------------------\n\n")
 
 print(f"average score: {avg}")
 print("Finished")
-
