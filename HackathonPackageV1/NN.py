@@ -12,7 +12,7 @@ model.add(k.layers.Dense(INPUT_SIZE*2, activation="relu"))
 model.add(k.layers.Dense(INPUT_SIZE*2, activation="relu"))
 
 # Initialize Output Layer
-
+model.add(k.layers.Dense(INPUT_SIZE, activation="relu"))
 
 # OPTIONAL model check
 model.summary()
