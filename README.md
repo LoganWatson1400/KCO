@@ -45,12 +45,12 @@ Ignore this. Implement this when we have a working model.
 Logan Watson\
 Patrick "Jack" Harmer
 
-## Standards
-Coding and git commiting standards adopted for this project...\
+## References
 [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)\
 [Python PEP8 Style Guide](https://peps.python.org/pep-0008/)
     
-## Documents
-Resources used to track or reference during the projects duration...\
 [GitHub Get Started Guide](https://docs.github.com/en/get-started)\
 [Run History](https://docs.google.com/spreadsheets/d/1wOyLKTcHgnI1PztO1qkg5AVAqS9rFHVCzd7w--Lm24w/edit?usp=sharing)
+
+[Keras API Documentation](https://keras.io/2.17/api/)\
+[Tensorflow API Documentation](https://www.tensorflow.org/api_docs/python/tf)
