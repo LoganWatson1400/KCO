@@ -53,4 +53,5 @@ Patrick "Jack" Harmer
 [Run History](https://docs.google.com/spreadsheets/d/1wOyLKTcHgnI1PztO1qkg5AVAqS9rFHVCzd7w--Lm24w/edit?usp=sharing)
 
 [Keras API Documentation](https://keras.io/2.17/api/)\
-[Tensorflow API Documentation](https://www.tensorflow.org/api_docs/python/tf)
+[Tensorflow API Documentation](https://www.tensorflow.org/api_docs/python/tf)\
+[Pandas API Documentation](https://pandas.pydata.org/pandas-docs/version/1.3.4/user_guide/index.html)
