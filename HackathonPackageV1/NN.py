@@ -1,5 +1,7 @@
 from tensorflow import keras as k
 
+BATCH_SIZE = 128
+EPOCHS = 15
 INPUT_SIZE = 3 # Number of inputs IE initial POs, inventory, etc
 
 # Initialize Input Layer
