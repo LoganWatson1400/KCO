@@ -1,6 +1,7 @@
 import json
 import numpy as np
 import pandas as pd
+import glob
 
 # Load the JSON data
 
@@ -17,23 +18,21 @@ situation = ["planningSchedule",
     "SKU_TM_Specs",
     "scrapFactor",
     "currentTimeUTC"]
+x = []
+
+def iterate_nested_json_recursive(json_obj):
+    for key, value in json_obj.items():
+        if isinstance(value, dict):
+            iterate_nested_json_recursive(value)
+        else:
+            x.append((key,value))
 
 for d in date:
-    # for n,s in enumerate(situation):
     for s in situation:
-        with open("E:/Hackathon/GitProject/KCO/HackathonPackageV1/EX_DataCache/OptimizerSituations/"
-                +f"{d}/{s}.json", 'r') as f:
-            # globals()["var%d"%n] = json.load(f)
-            # print(globals()["var" + str(n)])
-            globals()["var_%s"%s] = json.load(f)
-            # print(globals()["var_" + s])
-
-        # data = json.load("E:\Hackathon\GitProject\KCO\HackathonPackageV1\EX_DataCache\OptimizerSituations\2024-09-06 Week 1\currentTimeUTC.json")
-        # print(data)
-
-# print(globals()["var_initialPOs"])
-
-#Seperate data files into just numbers ["key": 5]
-for s in situation:
-    for key,val in globals()["var_%s"%s].items():
-        print(key, val)
+        extractPath = f'HackathonPackageV1/EX_DataCache/OptimizerSituations/{d}/{s}'
+        file = (extractPath + '.json')
+        with open(file, 'r') as f:
+            iterate_nested_json_recursive(json.load(f))
+# Print contents of x
+# for key,val in x:
+#     print(f'{key}------------{val}')
