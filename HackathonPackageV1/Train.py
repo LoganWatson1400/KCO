@@ -26,6 +26,6 @@ situationRoot='HackathonPackageV1\DataCache\OptimizerSituations'
 
 autoscore = lf.autoscore_loss(situationRoot, date[0]) #Loss Function
 
-n.model.compile(loss="categorical_crossentropy", optimizer="adam", metrics=["accuracy"])
+n.model.compile(loss=autoscore, optimizer="adam", metrics=["accuracy"])
 
 n.model.fit(x_train, y_train, batch_size=n.BATCH_SIZE, epochs=n.EPOCHS)
