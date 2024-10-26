@@ -1,8 +1,8 @@
 from tensorflow import keras as k
 
 BATCH_SIZE = 1
-EPOCHS = 10000
-INPUT_SIZE = 944 # Number of inputs IE initial POs, inventory, etc
+EPOCHS = 100
+INPUT_SIZE = 253 # Number of inputs IE initial POs, inventory, etc
 
 # Initialize Input Layer
 model = k.Sequential()
