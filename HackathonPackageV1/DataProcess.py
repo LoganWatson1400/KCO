@@ -2,6 +2,7 @@ import json
 import numpy as np
 import pandas as pd
 import glob
+from sklearn.preprocessing import OneHotEncoder
 
 # Load the JSON data
 
@@ -19,6 +20,69 @@ situation = ["planningSchedule",
     "scrapFactor",
     "currentTimeUTC"]
 
+def getData(d):
+    data = {}
+    for s in situation:
+        extractPath = f'HackathonPackageV1/EX_DataCache/OptimizerSituations/{d}/{s}.json'
+        for file in glob.glob(extractPath):
+            with open(file) as f:
+                data.update(json.load(f))
+    return data
+
+def normalize(data):
+    return pd.json_normalize(data)
+
+def clean_data(df):
+    # Identify numeric columns
+    numeric_cols = df.select_dtypes(include=['int64', 'float64']).columns
+    
+    # Encode numeric columns
+    encoded_numeric = pd.get_dummies(df[numeric_cols]).reset_index(drop=True)
+    
+    # Identify categorical columns
+    categorical_cols = df.select_dtypes(include=['object']).columns
+    
+    # Encode categorical data
+    encoder = OneHotEncoder(sparse=False)
+    encoded_categorical = encoder.fit_transform(df[categorical_cols])
+    
+    # Create encoded columns
+    encoded_categorical_df = pd.DataFrame(encoded_categorical, 
+                                       columns=[f'{col}_{val}' for col in categorical_cols for val in encoder.categories_[list(categorical_cols).index(col)]])
+    encoded_categorical_df.index = df.index
+    
+    # Combine encoded data
+    final_df = pd.concat([encoded_numeric, encoded_categorical_df], axis=1)
+    
+    return final_df
+
+def toCV(data):
+    data.to_csv('tag_value_pairs.csv', index=False)
+    print("CSV file saved successfully.")
+
+def processData():
+    data = getData("2024-09-06 Week 1")
+    df = normalize(data)
+    cleaned_df = clean_data(df)
+    return cleaned_df
+
+    # cleaned_df.to_csv('tag_value_pairs.csv', index=False)
+
+
+# # Main execution
+# data = getData("2024-09-06 Week 1")
+# df = normalize(data)
+# cleaned_df = clean_data(df)
+
+# # Save to CSV
+# cleaned_df.to_csv('tag_value_pairs.csv', index=False)
+
+# print("CSV file saved successfully.")
+         
+
+
+
+"""
 # one-hot encoding
 boolVals = [
     ('Complete',    np.array([1,0])),
@@ -94,9 +158,8 @@ for d in date:
         with open(file, 'r') as f:
             iterate_nested_json_recursive(json.load(f))
 # Print contents of x
-Xval = []
 for key,val in x:
     print(f'{key}------------{val}')
-    Xval.append(val)
 
 
+"""
