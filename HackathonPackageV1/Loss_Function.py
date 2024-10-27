@@ -530,9 +530,32 @@ def officialScorer(situationRoot, situationDate):
     # print(totalScore)
     return (totalScore)
 
-# actual loss function
+# # actual loss function
+# def autoscore_loss(situationRoot, situationDate):
+#     def autoscore(y_true, y_pred):
+#         # Note: y_true, y_pred are required for Keras, but otherwise they are unnecessary
+#         return officialScorer(situationRoot, situationDate)
+#     return autoscore
+
+# ChatGPT Implementation of loss function
+
+# Works but Nan after 1/2 epochs
+import tensorflow as tf
 def autoscore_loss(situationRoot, situationDate):
     def autoscore(y_true, y_pred):
-        # Note: y_true, y_pred are required for Keras, but otherwise they are unnecessary
-        return officialScorer(situationRoot, situationDate)
+        # Calculate the original score and include it in the loss
+        score = officialScorer(situationRoot, situationDate) * 1e-6
+        return tf.reduce_mean(tf.square(y_pred - y_true)) + score
     return autoscore
+
+# TypeError: Input 'y' of 'AddV2' Op has type float64 that does not match type float32 of argument 'x'.
+# import tensorflow as tf
+
+# def autoscore_loss(situationRoot, situationDate):
+#     def autoscore(y_true, y_pred):
+#         score = officialScorer(situationRoot, situationDate)
+#         # Scale or clip the score value
+#         clipped_score = tf.clip_by_value(score, -1e3, 1e3)
+#         mse_loss = tf.reduce_mean(tf.square(y_pred - y_true))
+#         return mse_loss + clipped_score
+#     return autoscore

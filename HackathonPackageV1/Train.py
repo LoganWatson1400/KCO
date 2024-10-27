@@ -46,6 +46,6 @@ model.summary()
 
 autoscore = lf.autoscore_loss(situationRoot, date[0]) #Loss Function
 
-model.compile(loss="categorical_crossentropy", optimizer="adam", metrics=["accuracy"])
+n.model.compile(loss=autoscore, optimizer="adam", metrics=["accuracy"])
 
 model.fit(x_train, y_train, batch_size=BATCH_SIZE, epochs=EPOCHS)
