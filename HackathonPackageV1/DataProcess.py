@@ -93,20 +93,15 @@ def updatejson(d, preds):
         for key in prevData:
             try:
                 temp = next(pVals)
-                # print(temp,end=" : ")
-                # if temp == None or temp == 'nan':
-                #     prevData[key] = 0
-                # else:
                 prevData[key] = next(pVals)
             except StopIteration:
                 print('',end='')
-            # prevData[key] = prevData[key]
 
         with open(exportPath,'w') as json_file:
             json.dump(prevData, json_file, indent=4, separators= (',', ':'))
 
 
-
+#working on this
 # data = {}
 # for s in situation:
 #     extractPath = f'HackathonPackageV1/EX_DataCache/OptimizerSituations/{d}/{s}.json'
