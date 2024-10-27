@@ -5,7 +5,7 @@ import DataProcess as dp
 import numpy as np
 
 BATCH_SIZE = 1
-EPOCHS = 100
+EPOCHS = 1
 
 date = [
     '2024-09-06 Week 1',
@@ -46,6 +46,15 @@ model.summary()
 
 autoscore = lf.autoscore_loss(situationRoot, date[0]) #Loss Function
 
-n.model.compile(loss=autoscore, optimizer="adam", metrics=["accuracy"])
+model.compile(loss="categorical_crossentropy", optimizer="adam", metrics=["accuracy"])
 
-model.fit(x_train, y_train, batch_size=BATCH_SIZE, epochs=EPOCHS)
+# model.fit(x_train, y_train, batch_size=BATCH_SIZE, epochs=EPOCHS)
+for i in range(EPOCHS):
+    model.train_on_batch(x_train, y_train)
+    predictions = model.predict_on_batch(x_train)
+    # print(len(predictions))
+    for x in predictions:
+        for y in x:
+            print(f'{y}')
+    # print(predictions[0][0])
+

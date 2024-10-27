@@ -25,10 +25,21 @@ def __getData(d):
     data = {}
     for s in situation:
         extractPath = f'HackathonPackageV1/EX_DataCache/OptimizerSituations/{d}/{s}.json'
-        for file in glob.glob(extractPath):
-            with open(file) as f:
-                data.update(json.load(f))
+        file = __getDataSingle(d, extractPath)
+        data.update(file)
     return data
+
+def __getDataSingle(d, extractPath):
+    data = {}
+    for file in glob.glob(extractPath):
+        with open(file) as f:
+            data.update(json.load(f))
+    return data
+
+def updateJson(predictions):
+    for i in enumerate(predictions):
+        pass
+
 
 def __normalize(data):
     return pd.json_normalize(data)
@@ -66,3 +77,12 @@ def processData(d):
     df = __normalize(data)
     cleaned_df = __clean_data(df)
     return cleaned_df
+
+def updatejson(d, preds):
+    predNumber = 0
+    for s in situation:
+        extractPath = f'HackathonPackageV1/EX_DataCache/OptimizerSituations/{d}/{s}.json'
+        prevData = __getDataSingle(d,extractPath)
+        for x in preds:
+            for y in x:
+                pass
