@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import glob
 from sklearn.preprocessing import OneHotEncoder
+import gc
 
 #to get data size do data.collums
 
@@ -48,6 +49,8 @@ def __getDataSingle(extractPath):
     for file in glob.glob(extractPath):
         with open(file) as f:
             data.update(json.load(f))
+
+    f.close()
     return data
 
 def __normalize(data):
@@ -83,16 +86,19 @@ def toCV(data):
     print('CSV file saved successfully.')
 
 def processData(d):
+    gc.collect()
     data = __getData(d)
     df = __normalize(data)
     # cleaned_df = df ## TODO bypasses cleaning function for convinience
     df = df.fillna(0)
     cleaned_df = __clean_data(df)
+    gc.collect()
     return cleaned_df
 
 #GPT updatejson
 
 def updatejson(d, preds):
+    gc.collect()
     for s in situation:
         extractPath = f'HackathonPackageV1/DataCache/OptimizerSituations/{d}/{s}.json'
         exportPath = f'HackathonPackageV1/PredDataCache/OptimizerSituations/{d}/{s}.json'
@@ -120,5 +126,7 @@ def updatejson(d, preds):
         # Save the updated data to the JSON file
         with open(exportPath, 'w') as json_file:
             json.dump(prevData, json_file, indent=4, separators=(',', ':'))
+        json_file.close()
+        gc.collect()
 
 

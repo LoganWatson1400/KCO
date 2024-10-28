@@ -3,9 +3,12 @@ from tensorflow import keras as k
 import Loss_Function as lf
 import DataProcess as dp
 import numpy as np
+import gc
+from keras import backend as K
+K.clear_session()
 
 BATCH_SIZE = 1
-EPOCHS = 12
+EPOCHS = 10
 
 date = [
     '2024-09-06 Week 1',
@@ -38,7 +41,7 @@ model.add(k.layers.Dense(INPUT_SIZE/2, activation="tanh"))
 model.add(k.layers.Dense(INPUT_SIZE, activation="tanh"))
 
 # OPTIONAL model check
-model.summary()
+# model.summary()
 
 ####TRAIN####
 
@@ -47,11 +50,10 @@ model.summary()
 autoscore = lf.autoscore_loss(predictRoot, date[0]) #Loss Function
 
 model.compile(loss=autoscore, optimizer="adam", metrics=["accuracy"])
-import gc
 # model.fit(x_train, y_train, batch_size=BATCH_SIZE, epochs=EPOCHS)
-from keras import backend as K
 for i in range(EPOCHS):
-    K.clear_session()
+    print(f' START LOOP {gc.get_count()}')
+    # model.summary()
     print(1)
     epoch_data = model.train_on_batch(x_train, y_train, return_dict= True)
     print(2)
@@ -62,6 +64,8 @@ for i in range(EPOCHS):
     weights = model.get_weights()
     model.compile(loss=autoscore, optimizer="adam", metrics=["accuracy"])
     model.set_weights(weights)
+    K.clear_session()
     gc.collect()
+    print(f' END LOOP {gc.get_count()}')
 
 

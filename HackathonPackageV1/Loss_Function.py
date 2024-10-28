@@ -10,6 +10,7 @@ import os
 from datetime import timedelta
 from datetime import datetime
 import pytz
+import gc
 
 import warnings
 warnings.filterwarnings("ignore")
@@ -24,6 +25,7 @@ if importAdditionalLibraries: #These libraries arent necessary for scoring but a
     
 
 def importSituation(situationPath): #Imports the Situation from each Week's Directory and properly formats the data to be able to be run through the scorer. 
+    gc.collect()
     planningSchedule=pd.read_json(situationPath+r'\planningSchedule.json')
     planningSchedule[['ForecastStartTime','ForecastEndTime']]=planningSchedule[['ForecastStartTime','ForecastEndTime']].astype('datetime64[ms]')
     initialPOs=pd.read_json(situationPath+r'\initialPOs.json')
@@ -61,10 +63,11 @@ def importSituation(situationPath): #Imports the Situation from each Week's Dire
     currentTimeUTC=pd.read_json(situationPath+r'\currentTimeUTC.json',typ='series')
     currentTimeUTC=currentTimeUTC['currentTimeUTC'].to_pydatetime().replace(tzinfo=pytz.utc)
     # print('Data Imported and Formatted')
-    
+    gc.collect()
     return (planningSchedule,initialPOs,reservedTimes,plannedDemandConverting,plannedDemandTM,inventoryGradeCount,planningRate,SKU_Pull_Rate,SKU_Converting_Specs,SKU_TM_Specs,scrapFactor,currentTimeUTC)
 
 def find_overlaps(df,startCol, endCol, thresh=1): #A threshold of 1 identifies 1 single overlap of 2 POs. A threshold of 2 identifies an overlap of 3 POs
+    gc.collect()
     forecastRanges=pd.concat([df[startCol],df[endCol]])
     forecastRanges=forecastRanges.sort_values()
     forecastRanges=forecastRanges.drop_duplicates()
@@ -73,9 +76,11 @@ def find_overlaps(df,startCol, endCol, thresh=1): #A threshold of 1 identifies 1
         hitTimes=(df[startCol]<=rangeStart) & (rangeStart<df[endCol]) #No additional checks are necessary because it is impossible for an SKU to start or end in between the Forecast Ranges
         if hitTimes.sum()>thresh: #All ranges hit the original PO starttime so a overlap occurs with 2 hits or more
             overlaps.append({"Start": forecastRanges.iloc[i], "End": forecastRanges.iloc[i+1], "Overlaps": hitTimes.sum()-1, "Raw": df[hitTimes]}) #Don't need to worry about overflow because time at i+1 cannot be the start of the last interval with a valid hit.
+    gc.collect()
     return overlaps
 
 def officialScorer(situationRoot, situationDate):
+    gc.collect()
     situationPath=situationRoot+'\\'+situationDate
     #Key Point 1
     (planningSchedule,
@@ -152,7 +157,7 @@ def officialScorer(situationRoot, situationDate):
         'TM3 Machine',
         'BI4 Machine',
     ]
-
+    gc.collect()
     #Key Point 4
     for winder in productionUnitWinders:
         specData=SKU_Converting_Specs[winder]
@@ -175,7 +180,7 @@ def officialScorer(situationRoot, situationDate):
     SKU_Forecasting.loc[isTM,'ForecastRemainingYardage']=SKU_Forecasting.loc[isTM,'PredictedRemainingQuantity']*2204.62/weightPerRoll*yardsPerRoll*-1
     SKU_Forecasting['PercentRemaining']=SKU_Forecasting['PredictedRemainingQuantity']/SKU_Forecasting['ForecastQuantity']
     SKU_Forecasting.loc[SKU_Forecasting['PercentRemaining']<0,'PercentRemaining']=0
-
+    gc.collect()
     #Key Point 5
     SKU_Forecasting['ForecastDuration']=SKU_Forecasting['ForecastYardage']/SKU_Forecasting['PullRate']#+SKU_Forecasting['InfrequentDelay']
     SKU_Forecasting['ForecastRemainingDuration']=SKU_Forecasting['ForecastRemainingYardage']/SKU_Forecasting['PullRate']
@@ -195,7 +200,7 @@ def officialScorer(situationRoot, situationDate):
     forecastStarts=SKU_Forecasting.groupby('ProductionUnit').head(1)
     forecastStarts['ActiveTime']=forecastStarts['ForecastStartTime']
     forecastStarts.loc[(forecastStarts['ForecastStartTime']<=(currentTimeUTC-timedelta(days=0)).replace(tzinfo=None)) | (forecastStarts['ProductionPlanStatus']=='Active'),'ActiveTime']=currentTimeUTC.replace(second=0,microsecond=0,tzinfo=None) #If a PO has already started or has been scheduled to have started, set the active time to the current time.
-
+    gc.collect()
     #Key Point 6
     SKU_Forecasting['ActiveTime']=SKU_Forecasting['ProductionUnit'].map(forecastStarts.set_index('ProductionUnit')['ActiveTime'])
     SKU_Forecasting['ModelStartTime']=np.NaN
@@ -219,7 +224,7 @@ def officialScorer(situationRoot, situationDate):
     timeToNextTMPO=(timeToNextTMPO-currentMinuteUTC).dt.total_seconds()/(60*60)
     timeToNextTMPO=timeToNextTMPO.fillna(0)
 
-
+    gc.collect()
     forecastRanges=pd.concat([SKU_Forecasting['ModelStartTime'],SKU_Forecasting['ModelEndTime']])
     forecastRanges=forecastRanges.sort_values()
     forecastRanges=forecastRanges.drop_duplicates()
@@ -279,7 +284,7 @@ def officialScorer(situationRoot, situationDate):
     forecastGradeYardageResampled=forecastGradeRollsResampled*SKU_TM_Specs['Inv_Length']
     forecastGradeRollsResampled.index=forecastGradeRollsResampled.index-timedelta(days=7)
     forecastGradeRollsSevenDay=forecastGradeRollsResampled.loc[currentFiveMinutesUTC-timedelta(days=7):currentFiveMinutesUTC] #Changed the slice from referencing the 1 hour UTC time to 5 minute UTC time. This prevents the program for overwriting historical datapoints and prevents it from being an hour delayed
-
+    gc.collect()
     #forecastGradeRollsRemaining and runoutGradeSampled
     #runoutRatesFillNA=runoutGradeSampled.fillna(0)
     #runoutGradeYardageConsumed
@@ -347,7 +352,7 @@ def officialScorer(situationRoot, situationDate):
     # runoutGradeTimeToEndtime=runoutGradeEndtimesLookup.apply(lambda x: list((x-forecastTimeRemaining.index).total_seconds()/3600))
     # runoutGradeTimeToEndtime=pd.DataFrame(runoutGradeTimeToEndtime.values.tolist(), index=runoutGradeTimeToEndtime.index, columns=forecastTimeRemaining.index).T
     # runoutGradeTimeToEndtime[gradeNAs.keys()[~gradeNAs.keys().isin(runoutGradeTimeToEndtime.columns)]]=None #Add missing grades
-
+    gc.collect()
     SKU_TM_Specs_Full=SKU_TM_Specs.T.copy()
     SKU_TM_Specs_Full.loc[:,SKU_TM_Specs['Inv_Length'].add_suffix('_Max').keys()]=SKU_TM_Specs.T.values
     SKU_TM_Specs_Full.loc[:,SKU_TM_Specs['Inv_Length'].add_suffix('_Min').keys()]=SKU_TM_Specs.T.values
@@ -427,7 +432,7 @@ def officialScorer(situationRoot, situationDate):
     gradeChangesConvertingOverlapsDF['Duration']=gradeChangesConvertingOverlapsDF['GradeChangeEnd']-gradeChangesConvertingOverlapsDF['GradeChangeStart']
     #Grade Change Score is A*B   A: Hours of overlapping converting Grade Changes   B: # Overlapping Converting Grade Changes. You can’t grade change within 3 hours of all converting lines (No manpower). You can Grade Change 2 at a time but will penalize 3 or above
     gradeChangesConvertingHours=(gradeChangesConvertingOverlapsDF['Duration']*(gradeChangesConvertingOverlapsDF['Overlaps']-1)).sum().total_seconds()/3600
-
+    gc.collect()
     #forecastGradeRollsRemainingFullSevenDay has the min/max info, however the roll counts should be reverted back to the original by pulling them from forecastGradeRollsSevenDay
     rollForecast7Day=forecastGradeRollsRemainingFullSevenDay.copy()
     rollForecast7Day.index=rollForecast7Day.index+timedelta(days=7)
@@ -505,7 +510,7 @@ def officialScorer(situationRoot, situationDate):
     rollsBelowMaxInventoryCount=rollsBelowMaxInventory.mean()
     rollsBelowMaxInventoryScore=0.1*rollsBelowMaxInventoryCount*1/pd.Series(GradePriorityRanking) #Already implements the multiplier. This is the score for Grade Priority Ranking
     rollsBelowMaxInventoryScoreTotal=rollsBelowMaxInventoryScore.sum()
-
+    gc.collect()
     scoringBreakdown={
         'HoursBelowTMPOMinimumRuntime2hr':-10000*HoursBelowTMPOMinimumRuntime2hr,
         'totalOverlapHours':-10000*totalOverlapHours,
@@ -523,11 +528,13 @@ def officialScorer(situationRoot, situationDate):
         'rollsBelowMaxInventoryScoreTotal':-1*rollsBelowMaxInventoryScoreTotal, #Score Built In
     }
     totalScore=0
+    
     for criteria in scoringBreakdown:
         totalScore=totalScore+scoringBreakdown[criteria]
 
     # print(pd.Series(scoringBreakdown))
     # print(totalScore)
+    gc.collect()
     return (totalScore)
 
 import tensorflow as tf
@@ -536,6 +543,8 @@ def autoscore_loss(situationRoot, situationDate):
     def autoscore(y_true, y_pred):
         # Calculate the original score and include it in the loss
         score = officialScorer(situationRoot, situationDate) * 1e-6
+        gc.collect()
         return tf.reduce_mean(tf.square(y_pred - y_true)) + score
+    gc.collect()
     return autoscore
 
