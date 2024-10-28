@@ -5,7 +5,7 @@ import DataProcess as dp
 import numpy as np
 
 BATCH_SIZE = 1
-EPOCHS = 10
+EPOCHS = 12
 
 date = [
     '2024-09-06 Week 1',
@@ -47,25 +47,21 @@ model.summary()
 autoscore = lf.autoscore_loss(predictRoot, date[0]) #Loss Function
 
 model.compile(loss=autoscore, optimizer="adam", metrics=["accuracy"])
-
+import gc
 # model.fit(x_train, y_train, batch_size=BATCH_SIZE, epochs=EPOCHS)
+from keras import backend as K
 for i in range(EPOCHS):
+    K.clear_session()
+    print(1)
     epoch_data = model.train_on_batch(x_train, y_train, return_dict= True)
+    print(2)
     predictions = model.predict_on_batch(x_train)
+    print(3)
     print(f"\nEpoch: {i+1} --- Loss: {epoch_data['loss']} --- Accuracy: {epoch_data['accuracy']} --- prediction[0][0]: {predictions[0][0]}\n")
-    # print(len(predictions[0]))
-    # print("\n\n")
-    # print(epoch_data)
-    # print("\n\n")
-    # print(predictions[0][0])
-    # print("\n\n")
     dp.updatejson(date[0],predictions)
     weights = model.get_weights()
     model.compile(loss=autoscore, optimizer="adam", metrics=["accuracy"])
     model.set_weights(weights)
-#     # # print(len(predictions))
-#     # for x in predictions:
-#     #     for y in x:
-#     #         print(f'{y}')
-#     # # print(predictions[0][0])
+    gc.collect()
+
 

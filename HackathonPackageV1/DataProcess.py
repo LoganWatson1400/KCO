@@ -8,9 +8,20 @@ from sklearn.preprocessing import OneHotEncoder
 
 # Load the JSON data
 date = ['2024-09-06 Week 1','2024-09-06 Week 2','2024-09-06 Week 3']
-situation = ['planningSchedule',
-    'initialPOs',
-    'reservedTimes',
+# situation = ['planningSchedule',
+#     'initialPOs',
+#     'reservedTimes',
+#     'plannedDemandConverting',
+#     'plannedDemandTM',
+#     'inventoryGradeCount',
+#     'planningRateDict',
+#     'SKU_Pull_Rate_Dict',
+#     'SKU_Converting_Specs_Dict',
+#     'SKU_TM_Specs',
+#     'scrapFactor',
+#     'currentTimeUTC']
+#GPT implementation
+situation = [
     'plannedDemandConverting',
     'plannedDemandTM',
     'inventoryGradeCount',
@@ -18,8 +29,7 @@ situation = ['planningSchedule',
     'SKU_Pull_Rate_Dict',
     'SKU_Converting_Specs_Dict',
     'SKU_TM_Specs',
-    'scrapFactor',
-    'currentTimeUTC']
+    'scrapFactor']
 
 # extractPath = f'HackathonPackageV1/DataCache/OptimizerSituations/{d}/{s}.json'
 # exportPath = f'HackathonPackageV1/EX_DataCache/OptimizerSituations/{d}/{s}.json'
@@ -80,73 +90,7 @@ def processData(d):
     cleaned_df = __clean_data(df)
     return cleaned_df
 
-# def updatejson(d, preds):
-#     # predNumber = 0
-#     print("check 1")
-#     for s in situation:
-#         extractPath = f'HackathonPackageV1/DataCache/OptimizerSituations/{d}/{s}.json'
-#         exportPath = f'HackathonPackageV1/PredDataCache/OptimizerSituations/{d}/{s}.json'
-#         prevData = __getDataSingle(extractPath)
-#         print("check 2")
-#         #iterator for preds
-#         pVals = (item[0] for item in preds)
-
-        
-#         for key in prevData:
-#             print("check 3")
-#             try:
-#                 temp = next(pVals)
-#                 prevData[key] = next(pVals)
-#                 print("check 4")
-#             except StopIteration:
-#                 print('',end='')
-#                 print("check 5")
-
-#         with open(exportPath,'w') as json_file:
-#             json.dump(prevData, json_file, indent=4, separators= (',', ':'))
-#             print("check 6")
-
 #GPT updatejson
-import numpy as np
-
-# def updatejson(d, preds):
-#     for s in situation:
-#         extractPath = f'HackathonPackageV1/DataCache/OptimizerSituations/{d}/{s}.json'
-#         exportPath = f'HackathonPackageV1/PredDataCache/OptimizerSituations/{d}/{s}.json'
-#         prevData = __getDataSingle(extractPath)
-
-#         # Flatten preds and convert to native Python floats
-#         pVals = (float(value) for value in (preds.flatten() if hasattr(preds, 'flatten') else preds))
-
-#         # Update prevData with values from pVals
-#         # for key in prevData.keys():
-#         #     try:
-#         #         prevData[key] = next(pVals)
-#         #     except StopIteration:
-#         #         break  # End updating once all predictions are used up
-
-#         # for key in prevData:
-#         #     if isinstance(prevData[key], dict): 
-#         #         continue
-#         #     try:
-#         #         prevData[key] = next(pVals)
-#         #     except StopIteration:
-#         #         break  # End updating once all predictions are used up
-
-#         def update_nested_dict(data, predictions):
-#             for key, value in data.items():
-#                 if isinstance(value, dict):
-#                     update_nested_dict(value, predictions)
-#                 else:
-#                     try:
-#                         data[key] = next(predictions)
-#                     except StopIteration:
-#                         return  # Stop if no more predictions
-        
-#         # Save the updated data to JSON
-#         with open(exportPath, 'w') as json_file:
-#             json.dump(prevData, json_file, indent=4, separators=(',', ':'))
-
 
 def updatejson(d, preds):
     for s in situation:
@@ -169,23 +113,12 @@ def updatejson(d, preds):
                         data[key] = next(predictions)
                     except StopIteration:
                         return  # Stop if no more predictions
-
-        # Call the function to update `prevData`
+                    
+        # Update `prevData` with predictions
         update_nested_dict(prevData, pVals)
-        
+
         # Save the updated data to the JSON file
         with open(exportPath, 'w') as json_file:
             json.dump(prevData, json_file, indent=4, separators=(',', ':'))
 
-
-#working on this
-# data = {}
-# for s in situation:
-#     extractPath = f'HackathonPackageV1/EX_DataCache/OptimizerSituations/{d}/{s}.json'
-#     for file in glob.glob(extractPath):
-#         with open(file) as f:
-#             temp = json.load(f)
-#             print(temp)
-#             data.update(json.load(f))
-#     data.update(file)
 
