@@ -537,14 +537,21 @@ def officialScorer(situationRoot, situationDate):
     gc.collect()
     return (totalScore)
 
+
+def sigmoid(x):
+    return 1.0 / (1.0 + np.exp(-x))
+
 import tensorflow as tf
 # import DataProcess as dp
 def autoscore_loss(situationRoot, situationDate):
     def autoscore(y_true, y_pred):
         # Calculate the original score and include it in the loss
-        score = officialScorer(situationRoot, situationDate) * 1e-6
+        score = officialScorer(situationRoot, situationDate)
+        # score = officialScorer(situationRoot, situationDate) * 1e-6
+        score = sigmoid(score)
         gc.collect()
-        return tf.reduce_mean(tf.square(y_pred - y_true)) + score
+        return tf.reduce_mean(tf.square(y_pred - (y_true*score))) 
+        # return  (y_pred * sigmoid(score)) + 0*y_true
     gc.collect()
     return autoscore
 
