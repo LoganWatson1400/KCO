@@ -647,30 +647,30 @@ def officialScorer(situationRoot, situationDate):
     return (totalScore, scoringBreakdown)
     
 # situationDate='2024-09-06 Week 3'
-#situationDate='2024-10-09'
+# situationDate='2024-10-09'
 # situationRoot='d:\\otapps\\inventory_dev\\root\\DataCache\\OptimizerSituations'#OLD
-date = [
-    '2024-09-06 Week 1',
-    '2024-09-06 Week 2',
-    '2024-09-06 Week 3'
-    ]
+# date = [
+#     '2024-09-06 Week 1',
+#     '2024-09-06 Week 2',
+#     '2024-09-06 Week 3'
+#     ]
 
-situationRoot='HackathonPackageV1\DataCache\OptimizerSituations'
-avg = 0
-size = 0
+# situationRoot='HackathonPackageV1\DataCache\OptimizerSituations'
+# avg = 0
+# size = 0
 
-for d in date:
-    print(f"\n\n--------------{d}--------------\n\n")
-    totalScore, scoringBreakdown = officialScorer(situationRoot,d)
-    avg += totalScore
-    size += 1
+# for d in date:
+#     print(f"\n\n--------------{d}--------------\n\n")
+#     totalScore, scoringBreakdown = officialScorer(situationRoot,d)
+#     avg += totalScore
+#     size += 1
 
-avg = avg/size
+# avg = avg/size
 
-# totalScore, scoringBreakdown = officialScorer(situationRoot,situationDate)
+# # totalScore, scoringBreakdown = officialScorer(situationRoot,situationDate)
 
-print("\n\n------------------------------------------\n\n")
+# print("\n\n------------------------------------------\n\n")
 
 
-print(f"average score: {avg}")
-print("Finished")
+# print(f"average score: {avg}")
+# print("Finished")

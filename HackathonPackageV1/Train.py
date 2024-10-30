@@ -1,71 +1,106 @@
-# Training Program for NN model
-from tensorflow import keras as k
-import Loss_Function as lf
-import DataProcess as dp
+import glob
+import os
+import sys
+import pandas as pd
 import numpy as np
+import random
+from Roll_Inventory_Optimizer_Scoring import officialScorer
 
-BATCH_SIZE = 1
-EPOCHS = 10
-
-date = [
+week = 0
+weeks = [
     '2024-09-06 Week 1',
     '2024-09-06 Week 2',
     '2024-09-06 Week 3'
-    ]
+]
 
-## Grab Data
-data = dp.processData(date[0])
-INPUT_SIZE = len(data.columns) # Number of inputs IE initial POs, inventory, etc
-## show data in cvs file
-dp.toCV(data)
 
-x_train = np.array(data, dtype=np.float32).reshape(BATCH_SIZE,len(data.columns))
-y_train = x_train.astype(np.float32)
-situationRoot='HackathonPackageV1\DataCache\OptimizerSituations'
-predictRoot='HackathonPackageV1\PredDataCache\OptimizerSituations'
-####MODEL####
+EPOCS = 1000
+patience = 100
 
-# Initialize Input Layer
-model = k.Sequential()
-model.add(k.Input(shape=INPUT_SIZE))
+#Static paths
+csv = 'tag_value_pairs.csv'
+staticPath = f'HackathonPackageV1\\DataCache\\OptimizerSituations\\{weeks[week]}\\planningSchedule.json'
+root = 'HackathonPackageV1\\DataCache\\OptimizerSituations'
+InitialPaths = glob.glob(root + f'\\{weeks[week]}\\*.json')
+temp = {}
+for i in InitialPaths:
+    temp[os.path.basename(i)] = i
+InitialPaths = temp
 
-# Initialize Hidden Layer
-model.add(k.layers.Dense(INPUT_SIZE/2, activation="tanh"))
-model.add(k.layers.Dense(INPUT_SIZE/2, activation="tanh"))
-model.add(k.layers.Dense(INPUT_SIZE/2, activation="tanh"))
+# print(InitialPaths['initialPOs.json']) #How to get
 
-# Initialize Output Layer
-model.add(k.layers.Dense(INPUT_SIZE, activation="tanh"))
+#Output Paths
+outRoot = 'HackathonPackageV1\\PredDataCache\\OptimizerSituations'
+outSchedule = f'HackathonPackageV1\\PredDataCache\\OptimizerSituations\\{weeks[week]}\\planningSchedule.json'
 
-# OPTIONAL model check
-model.summary()
+#TempPaths
+bestSchedule = 'HackathonPackageV1\\BestSchedule.json'
 
-####TRAIN####
+df = pd.read_json(staticPath)
+IData = pd.read_json(InitialPaths['initialPOs.json'])
+SKUDict = pd.read_json(InitialPaths['SKU_Pull_Rate_Dict.json'])
 
-## Training Loop (3 epochs = 3 weeks)
 
-autoscore = lf.autoscore_loss(predictRoot, date[0]) #Loss Function
+SKUDict.to_csv('tag_value_pairs.csv')
+### SKU Dicts ###
+# SKUDict['CFR1 Parent Rolls'].dropna().to_csv('tag_value_pairs.csv')
 
-model.compile(loss=autoscore, optimizer="adam", metrics=["accuracy"])
+### Catagorical Data ###
+PUnits = IData['ProductionUnit'].unique()
+PIds = IData['Prod_Id'].unique()
 
-# model.fit(x_train, y_train, batch_size=BATCH_SIZE, epochs=EPOCHS)
-for i in range(EPOCHS):
-    epoch_data = model.train_on_batch(x_train, y_train, return_dict= True)
-    predictions = model.predict_on_batch(x_train)
-    print(f"\nEpoch: {i+1} --- Loss: {epoch_data['loss']} --- Accuracy: {epoch_data['accuracy']} --- prediction[0][0]: {predictions[0][0]}\n")
-    # print(len(predictions[0]))
-    # print("\n\n")
-    # print(epoch_data)
-    # print("\n\n")
-    # print(predictions[0][0])
-    # print("\n\n")
-    dp.updatejson(date[0],predictions)
-    weights = model.get_weights()
-    model.compile(loss=autoscore, optimizer="adam", metrics=["accuracy"])
-    model.set_weights(weights)
-#     # # print(len(predictions))
-#     # for x in predictions:
-#     #     for y in x:
-#     #         print(f'{y}')
-#     # # print(predictions[0][0])
+
+### Float Values ###
+ForeStartMIN = IData['ForecastStartTime'].min()
+ForeStartMAX = IData['ForecastStartTime'].max()
+
+ForeEndMIN = IData['ForecastEndTime'].min()
+ForeEndMAX = IData['ForecastEndTime'].max()
+ 
+
+
+### randomizer ###TODO
+
+# Disable
+def blockPrint():
+    sys.stdout = open(os.devnull, 'w')
+
+# Restore
+def enablePrint():
+    sys.stdout = sys.__stdout__
+
+
+best = -364453 ## no change
+iterations = 0
+anxiety = 0
+while iterations < EPOCS and anxiety < patience:
+    blockPrint() ##########################################################
+    iterations += 1
+    anxiety += 1
+    
+
+    new_PUnits = random.choices(PUnits, k=len(df['ProductionUnit']))
+
+    df['ProductionUnit'] = new_PUnits
+
+    for key, val in df['ProductionUnit'].items():
+        df['Prod_Id'][key] = random.choice(SKUDict[val].dropna().keys())
+
+    #TODO random start and end time
+
+    df.to_json(outSchedule, indent=4)
+    (loss, z) = officialScorer(outRoot, weeks[week]) #week is default #TODO can use breakdown to optimize
+    # print(f'loss: {loss}: breakdown: {breakdown}')
+    if loss > best:
+        best = loss
+        df.to_json(bestSchedule, indent=4)
+        # df.to_csv('tag_value_pairs.csv')
+        patients = 0
+    
+    print('\n\n')
+    enablePrint() ########################################################
+    print(f'anxiety: {anxiety} :: iterations: {iterations}')
+
+print(f'\n\n\nBest Score achived: {best}')
+
 

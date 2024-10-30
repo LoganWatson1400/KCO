@@ -1,1283 +1,1283 @@
 {
-    "PB1 Winder":{
-        "13295":{
-            "PullRate":0.386497437953949,
-            "InfrequentDelay":0.5500715970993042,
-            "Plies":-0.2268684059381485,
-            "Grade":0.0007254504598677158,
-            "DataCompleteness":0.007980383932590485
+    "PB1 Winder": {
+        "13295": {
+            "PullRate": 390.333142918449,
+            "InfrequentDelay": 194.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13274":{
-            "PullRate":0.009761092253029346,
-            "InfrequentDelay":-0.17322330176830292,
-            "Plies":-0.326877623796463,
-            "Grade":-0.04971059784293175,
-            "DataCompleteness":-0.08091137558221817
+        "13274": {
+            "PullRate": 308.8927130484979,
+            "InfrequentDelay": 99.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13431":{
-            "PullRate":-0.7336875200271606,
-            "InfrequentDelay":-0.181778222322464,
-            "Plies":-0.028550883755087852,
-            "Grade":-0.16125135123729706,
-            "DataCompleteness":0.27210772037506104
+        "13431": {
+            "PullRate": 425.5693209519912,
+            "InfrequentDelay": 325.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "10688":{
-            "PullRate":-0.08210402727127075,
-            "InfrequentDelay":-0.3877125680446625,
-            "Plies":0.18365783989429474,
-            "Grade":-0.11246288567781448,
-            "DataCompleteness":0.14301440119743347
+        "10688": {
+            "PullRate": 223.961521612128,
+            "InfrequentDelay": 278.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "11323":{
-            "PullRate":0.02266732230782509,
-            "InfrequentDelay":-0.6534615755081177,
-            "Plies":-0.3604453206062317,
-            "Grade":0.2834658920764923,
-            "DataCompleteness":0.4057873785495758
+        "11323": {
+            "PullRate": 206.30821293517565,
+            "InfrequentDelay": 263.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "13591":{
-            "PullRate":0.5455878376960754,
-            "InfrequentDelay":-0.09892826527357101,
-            "Plies":0.28335481882095337,
-            "Grade":0.13006454706192017,
-            "DataCompleteness":0.15889129042625427
+        "13591": {
+            "PullRate": 317.6866766554111,
+            "InfrequentDelay": 149.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "12434":{
-            "PullRate":-0.5435846447944641,
-            "InfrequentDelay":0.2137463241815567,
-            "Plies":0.2922181785106659,
-            "Grade":0.017055382952094078,
-            "DataCompleteness":-0.1335512101650238
+        "12434": {
+            "PullRate": 448.3067795480841,
+            "InfrequentDelay": 3460.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "10108":{
-            "PullRate":-0.08088721334934235,
-            "InfrequentDelay":-0.48995232582092285,
-            "Plies":-0.29456809163093567,
-            "Grade":-0.12743604183197021,
-            "DataCompleteness":-0.44357067346572876
+        "10108": {
+            "PullRate": 264.1953963637338,
+            "InfrequentDelay": 39.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "13757":{
-            "PullRate":0.4990035593509674,
-            "InfrequentDelay":0.10249529778957367,
-            "Plies":-0.7638887166976929,
-            "Grade":0.254942923784256,
-            "DataCompleteness":0.24811041355133057
+        "13757": {
+            "PullRate": 307.21931052561484,
+            "InfrequentDelay": 94.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "13979":{
-            "PullRate":-0.2080366462469101,
-            "InfrequentDelay":-0.3963084816932678,
-            "Plies":0.5074670910835266,
-            "Grade":0.30130013823509216,
-            "DataCompleteness":-0.6202986240386963
+        "13979": {
+            "PullRate": 387.47457798771484,
+            "InfrequentDelay": 85.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13980":{
-            "PullRate":-0.07880833745002747,
-            "InfrequentDelay":-0.164170503616333,
-            "Plies":0.7591427564620972,
-            "Grade":-0.15652891993522644,
-            "DataCompleteness":0.38946205377578735
+        "13980": {
+            "PullRate": 358.92379925344926,
+            "InfrequentDelay": 672.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13860":{
-            "PullRate":-0.4160465896129608,
-            "InfrequentDelay":-0.15346190333366394,
-            "Plies":-0.16713093221187592,
-            "Grade":0.39001867175102234,
-            "DataCompleteness":0.27672627568244934
+        "13860": {
+            "PullRate": 403.47333797166243,
+            "InfrequentDelay": 409.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "13972":{
-            "PullRate":-0.021471066400408745,
-            "InfrequentDelay":0.5512851476669312,
-            "Plies":0.49686041474342346,
-            "Grade":-0.19049647450447083,
-            "DataCompleteness":0.3837531507015228
+        "13972": {
+            "PullRate": 412.67518312753236,
+            "InfrequentDelay": 296.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13973":{
-            "PullRate":0.4986829459667206,
-            "InfrequentDelay":-0.6729950904846191,
-            "Plies":-0.37340885400772095,
-            "Grade":0.07531266659498215,
-            "DataCompleteness":-0.09821556508541107
+        "13973": {
+            "PullRate": 294.73425206587336,
+            "InfrequentDelay": 16.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13861":{
-            "PullRate":0.3365999460220337,
-            "InfrequentDelay":-0.46680545806884766,
-            "Plies":0.20807020366191864,
-            "Grade":0.6930030584335327,
-            "DataCompleteness":-0.10731750726699829
+        "13861": {
+            "PullRate": 254.02216924280864,
+            "InfrequentDelay": 525.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "12444":{
-            "PullRate":0.4682639539241791,
-            "InfrequentDelay":-0.035800520330667496,
-            "Plies":-0.3159322738647461,
-            "Grade":-0.4779881238937378,
-            "DataCompleteness":0.2830338180065155
+        "12444": {
+            "PullRate": NaN,
+            "InfrequentDelay": 229.5,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Incomplete"
         },
-        "13859":{
-            "PullRate":-0.6077926754951477,
-            "InfrequentDelay":0.30447953939437866,
-            "Plies":-0.19742551445960999,
-            "Grade":0.08126838505268097,
-            "DataCompleteness":-0.007686280645430088
+        "13859": {
+            "PullRate": 279.19724569205476,
+            "InfrequentDelay": 73.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "14232":{
-            "PullRate":-0.2995661497116089,
-            "InfrequentDelay":-0.09048844873905182,
-            "Plies":-0.2587742209434509,
-            "Grade":0.2208745777606964,
-            "DataCompleteness":0.34969562292099
+        "14232": {
+            "PullRate": 244.18494552320692,
+            "InfrequentDelay": 115.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         }
     },
-    "PB2 Winder":{
-        "13275":{
-            "PullRate":-0.12035662680864334,
-            "InfrequentDelay":-0.15725255012512207,
-            "Plies":0.025217203423380852,
-            "Grade":0.4280272424221039,
-            "DataCompleteness":-0.31449928879737854
+    "PB2 Winder": {
+        "13275": {
+            "PullRate": 383.3136757977929,
+            "InfrequentDelay": 273.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13758":{
-            "PullRate":-0.2631206810474396,
-            "InfrequentDelay":0.10051864385604858,
-            "Plies":0.30599576234817505,
-            "Grade":0.08800835907459259,
-            "DataCompleteness":-0.01833069883286953
+        "13758": {
+            "PullRate": 405.0002079832014,
+            "InfrequentDelay": 1419.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13292":{
-            "PullRate":0.4651644229888916,
-            "InfrequentDelay":0.2617661952972412,
-            "Plies":-0.4164980351924896,
-            "Grade":0.3297787606716156,
-            "DataCompleteness":-0.053101569414138794
+        "13292": {
+            "PullRate": 321.9275479849094,
+            "InfrequentDelay": 1979.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13298":{
-            "PullRate":-0.005983440205454826,
-            "InfrequentDelay":-0.4307326674461365,
-            "Plies":-0.19923433661460876,
-            "Grade":0.2404504120349884,
-            "DataCompleteness":-0.1397986263036728
+        "13298": {
+            "PullRate": 416.612598119618,
+            "InfrequentDelay": 116.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "11323":{
-            "PullRate":0.004568770527839661,
-            "InfrequentDelay":-0.3178049623966217,
-            "Plies":-0.24890798330307007,
-            "Grade":0.07002387940883636,
-            "DataCompleteness":-0.05371915176510811
+        "11323": {
+            "PullRate": 226.9612663148683,
+            "InfrequentDelay": 56.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "13756":{
-            "PullRate":0.14348509907722473,
-            "InfrequentDelay":0.06914025545120239,
-            "Plies":0.04200773313641548,
-            "Grade":0.5838285684585571,
-            "DataCompleteness":-0.7559638023376465
+        "13756": {
+            "PullRate": 390.8617984352577,
+            "InfrequentDelay": 16.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "13450":{
-            "PullRate":0.17511481046676636,
-            "InfrequentDelay":-0.061789147555828094,
-            "Plies":-0.14261466264724731,
-            "Grade":0.24720518290996552,
-            "DataCompleteness":0.2339830994606018
+        "13450": {
+            "PullRate": 252.3904190107646,
+            "InfrequentDelay": 212.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "12437":{
-            "PullRate":-0.02584795467555523,
-            "InfrequentDelay":0.17531222105026245,
-            "Plies":-0.036144744604825974,
-            "Grade":-0.130695179104805,
-            "DataCompleteness":-0.19440853595733643
+        "12437": {
+            "PullRate": 462.761292486874,
+            "InfrequentDelay": 1815.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "13294":{
-            "PullRate":0.5090436339378357,
-            "InfrequentDelay":-0.17731735110282898,
-            "Plies":-0.2507125437259674,
-            "Grade":0.03619147464632988,
-            "DataCompleteness":-0.26012900471687317
+        "13294": {
+            "PullRate": 371.80956507534455,
+            "InfrequentDelay": 835.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13961":{
-            "PullRate":-0.38643863797187805,
-            "InfrequentDelay":-0.17068251967430115,
-            "Plies":0.34725645184516907,
-            "Grade":0.21783176064491272,
-            "DataCompleteness":-0.41427579522132874
+        "13961": {
+            "PullRate": 336.07963285302543,
+            "InfrequentDelay": 220.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13969":{
-            "PullRate":0.5727651715278625,
-            "InfrequentDelay":0.2731935381889343,
-            "Plies":0.09019945561885834,
-            "Grade":-0.2237267643213272,
-            "DataCompleteness":0.0376993827521801
+        "13969": {
+            "PullRate": 438.87191870627566,
+            "InfrequentDelay": 22.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13971":{
-            "PullRate":0.12812575697898865,
-            "InfrequentDelay":-0.07528216391801834,
-            "Plies":0.20517751574516296,
-            "Grade":-0.601799726486206,
-            "DataCompleteness":0.1886635422706604
+        "13971": {
+            "PullRate": 318.6798463800677,
+            "InfrequentDelay": 71.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13966":{
-            "PullRate":-0.29932647943496704,
-            "InfrequentDelay":-0.12356516718864441,
-            "Plies":-0.1567137986421585,
-            "Grade":0.22248123586177826,
-            "DataCompleteness":-0.148522287607193
+        "13966": {
+            "PullRate": 376.3023591186017,
+            "InfrequentDelay": 426.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13866":{
-            "PullRate":0.2998339533805847,
-            "InfrequentDelay":-0.2078445702791214,
-            "Plies":0.18758854269981384,
-            "Grade":0.2828467786312103,
-            "DataCompleteness":-0.151645690202713
+        "13866": {
+            "PullRate": 302.058409502675,
+            "InfrequentDelay": 684.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "13862":{
-            "PullRate":0.2607719898223877,
-            "InfrequentDelay":-0.06265143305063248,
-            "Plies":-0.07289381325244904,
-            "Grade":0.4941292703151703,
-            "DataCompleteness":0.16097238659858704
+        "13862": {
+            "PullRate": 306.0385088741374,
+            "InfrequentDelay": 270.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "13967":{
-            "PullRate":-0.23090249300003052,
-            "InfrequentDelay":0.5584766864776611,
-            "Plies":-0.43334078788757324,
-            "Grade":-0.2275119572877884,
-            "DataCompleteness":0.6023181080818176
+        "13967": {
+            "PullRate": 431.155366012068,
+            "InfrequentDelay": 179.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13977":{
-            "PullRate":0.38966870307922363,
-            "InfrequentDelay":0.10721693187952042,
-            "Plies":0.2028551995754242,
-            "Grade":-0.5156554579734802,
-            "DataCompleteness":-0.3752150237560272
+        "13977": {
+            "PullRate": 330.88864451967544,
+            "InfrequentDelay": 338.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "14124":{
-            "PullRate":0.6086804866790771,
-            "InfrequentDelay":-0.4452207088470459,
-            "Plies":0.024344926699995995,
-            "Grade":0.246297687292099,
-            "DataCompleteness":-0.42823198437690735
+        "14124": {
+            "PullRate": 444.6657537202745,
+            "InfrequentDelay": 436.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13859":{
-            "PullRate":-0.2537076473236084,
-            "InfrequentDelay":0.13600975275039673,
-            "Plies":-0.3244108259677887,
-            "Grade":-0.2592843472957611,
-            "DataCompleteness":0.7085776925086975
+        "13859": {
+            "PullRate": 276.5684702262609,
+            "InfrequentDelay": 328.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "12444":{
-            "PullRate":-0.03270234912633896,
-            "InfrequentDelay":-0.7113158702850342,
-            "Plies":-0.7784755229949951,
-            "Grade":-0.06881503760814667,
-            "DataCompleteness":0.3159402906894684
+        "12444": {
+            "PullRate": NaN,
+            "InfrequentDelay": 527.7692307692307,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Incomplete"
         },
-        "14221":{
-            "PullRate":-0.23353710770606995,
-            "InfrequentDelay":0.27393656969070435,
-            "Plies":0.24390438199043274,
-            "Grade":-0.23808510601520538,
-            "DataCompleteness":0.3776684105396271
+        "14221": {
+            "PullRate": 289.61488277360496,
+            "InfrequentDelay": 547.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "14231":{
-            "PullRate":0.20983768999576569,
-            "InfrequentDelay":-0.06288199126720428,
-            "Plies":0.4744085967540741,
-            "Grade":0.48704618215560913,
-            "DataCompleteness":0.29582175612449646
+        "14231": {
+            "PullRate": 324.6850792321987,
+            "InfrequentDelay": 1072.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         }
     },
-    "PB3 Winder":{
-        "12435":{
-            "PullRate":0.6157025694847107,
-            "InfrequentDelay":0.3963731825351715,
-            "Plies":0.2674650549888611,
-            "Grade":0.1373865306377411,
-            "DataCompleteness":0.378781795501709
+    "PB3 Winder": {
+        "12435": {
+            "PullRate": 420.6083084109382,
+            "InfrequentDelay": 295.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "12438":{
-            "PullRate":0.19237546622753143,
-            "InfrequentDelay":-0.1941198706626892,
-            "Plies":0.4865282475948334,
-            "Grade":-0.6624654531478882,
-            "DataCompleteness":-0.06037085875868797
+        "12438": {
+            "PullRate": 433.05770208478816,
+            "InfrequentDelay": 713.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "13290":{
-            "PullRate":0.09200206398963928,
-            "InfrequentDelay":0.23680047690868378,
-            "Plies":0.12858544290065765,
-            "Grade":-0.4403892159461975,
-            "DataCompleteness":0.420765221118927
+        "13290": {
+            "PullRate": 390.7893169389008,
+            "InfrequentDelay": 369.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "12432":{
-            "PullRate":0.47168245911598206,
-            "InfrequentDelay":0.6191397905349731,
-            "Plies":0.6122943758964539,
-            "Grade":0.11074305325746536,
-            "DataCompleteness":0.15985651314258575
+        "12432": {
+            "PullRate": 456.2953990197653,
+            "InfrequentDelay": 467.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "12433":{
-            "PullRate":-0.2691955268383026,
-            "InfrequentDelay":0.14241601526737213,
-            "Plies":0.4798355996608734,
-            "Grade":0.2686783969402313,
-            "DataCompleteness":0.22186776995658875
+        "12433": {
+            "PullRate": 482.7636639140021,
+            "InfrequentDelay": 397.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "13289":{
-            "PullRate":0.42055439949035645,
-            "InfrequentDelay":0.40088486671447754,
-            "Plies":-0.6137825846672058,
-            "Grade":-0.20014676451683044,
-            "DataCompleteness":0.06348852068185806
+        "13289": {
+            "PullRate": 323.86767799500666,
+            "InfrequentDelay": 508.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "12436":{
-            "PullRate":0.0731641873717308,
-            "InfrequentDelay":0.5486276745796204,
-            "Plies":-0.12200012058019638,
-            "Grade":0.6731731295585632,
-            "DataCompleteness":-0.7311683893203735
+        "12436": {
+            "PullRate": 416.22535735054225,
+            "InfrequentDelay": 228.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "13500":{
-            "PullRate":0.24852308630943298,
-            "InfrequentDelay":-0.42887774109840393,
-            "Plies":-0.5959556102752686,
-            "Grade":0.15565751492977142,
-            "DataCompleteness":0.5058234333992004
+        "13500": {
+            "PullRate": 282.5485755131845,
+            "InfrequentDelay": 243.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13592":{
-            "PullRate":-0.15908454358577728,
-            "InfrequentDelay":0.13553281128406525,
-            "Plies":0.4236510396003723,
-            "Grade":0.6577727794647217,
-            "DataCompleteness":-0.165065199136734
+        "13592": {
+            "PullRate": 233.66892994857065,
+            "InfrequentDelay": 340.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13756":{
-            "PullRate":-0.09067713469266891,
-            "InfrequentDelay":0.23301321268081665,
-            "Plies":-0.8035909533500671,
-            "Grade":0.653058648109436,
-            "DataCompleteness":0.298473596572876
+        "13756": {
+            "PullRate": 248.14924950069317,
+            "InfrequentDelay": 919.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "12437":{
-            "PullRate":0.03889235854148865,
-            "InfrequentDelay":-0.7787483930587769,
-            "Plies":0.14463505148887634,
-            "Grade":"Grade6",
-            "DataCompleteness":"Incomplete"
+        "12437": {
+            "PullRate": 404.910593136305,
+            "InfrequentDelay": 444.09090909090907,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Incomplete"
         },
-        "13963":{
-            "PullRate":345.1354816187811,
-            "InfrequentDelay":627.0,
-            "Plies":1.0,
-            "Grade":"Grade4",
-            "DataCompleteness":"Complete"
+        "13963": {
+            "PullRate": 345.1354816187811,
+            "InfrequentDelay": 627.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13968":{
-            "PullRate":404.42619149773697,
-            "InfrequentDelay":247.0,
-            "Plies":1.0,
-            "Grade":"Grade4",
-            "DataCompleteness":"Complete"
+        "13968": {
+            "PullRate": 404.42619149773697,
+            "InfrequentDelay": 247.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13870":{
-            "PullRate":383.33545626027376,
-            "InfrequentDelay":239.0,
-            "Plies":1.0,
-            "Grade":"Grade6",
-            "DataCompleteness":"Complete"
+        "13870": {
+            "PullRate": 383.33545626027376,
+            "InfrequentDelay": 239.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "13868":{
-            "PullRate":261.072706753589,
-            "InfrequentDelay":410.0,
-            "Plies":1.0,
-            "Grade":"Grade6",
-            "DataCompleteness":"Complete"
+        "13868": {
+            "PullRate": 261.072706753589,
+            "InfrequentDelay": 410.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "14037":{
-            "PullRate":421.1676717763067,
-            "InfrequentDelay":56.0,
-            "Plies":1.0,
-            "Grade":"Grade4",
-            "DataCompleteness":"Complete"
+        "14037": {
+            "PullRate": 421.1676717763067,
+            "InfrequentDelay": 56.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13871":{
-            "PullRate":549.2874728231442,
-            "InfrequentDelay":355.0,
-            "Plies":1.0,
-            "Grade":"Grade6",
-            "DataCompleteness":"Complete"
+        "13871": {
+            "PullRate": 549.2874728231442,
+            "InfrequentDelay": 355.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "13983":{
-            "PullRate":260.7026347289692,
-            "InfrequentDelay":395.0,
-            "Plies":1.0,
-            "Grade":"Grade4",
-            "DataCompleteness":"Complete"
+        "13983": {
+            "PullRate": 260.7026347289692,
+            "InfrequentDelay": 395.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13867":{
-            "PullRate":509.65118595727813,
-            "InfrequentDelay":592.0,
-            "Plies":1.0,
-            "Grade":"Grade6",
-            "DataCompleteness":"Complete"
+        "13867": {
+            "PullRate": 509.65118595727813,
+            "InfrequentDelay": 592.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "13869":{
-            "PullRate":293.5700224243408,
-            "InfrequentDelay":270.0,
-            "Plies":1.0,
-            "Grade":"Grade6",
-            "DataCompleteness":"Complete"
+        "13869": {
+            "PullRate": 293.5700224243408,
+            "InfrequentDelay": 270.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "14153":{
-            "PullRate":329.85727117260416,
-            "InfrequentDelay":215.0,
-            "Plies":1.0,
-            "Grade":"Grade4",
-            "DataCompleteness":"Complete"
+        "14153": {
+            "PullRate": 329.85727117260416,
+            "InfrequentDelay": 215.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         }
     },
-    "PB4 Winder":{
-        "10109":{
-            "PullRate":387.3395966011098,
-            "InfrequentDelay":3185.0,
-            "Plies":1.0,
-            "Grade":"Grade6",
-            "DataCompleteness":"Complete"
+    "PB4 Winder": {
+        "10109": {
+            "PullRate": 387.3395966011098,
+            "InfrequentDelay": 3185.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "10073":{
-            "PullRate":351.24829499936214,
-            "InfrequentDelay":1006.0,
-            "Plies":1.0,
-            "Grade":"Grade6",
-            "DataCompleteness":"Complete"
+        "10073": {
+            "PullRate": 351.24829499936214,
+            "InfrequentDelay": 1006.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "13450":{
-            "PullRate":313.55322794136634,
-            "InfrequentDelay":607.0,
-            "Plies":1.0,
-            "Grade":"Grade6",
-            "DataCompleteness":"Complete"
+        "13450": {
+            "PullRate": 313.55322794136634,
+            "InfrequentDelay": 607.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "10104":{
-            "PullRate":373.4499089961561,
-            "InfrequentDelay":112.0,
-            "Plies":1.0,
-            "Grade":"Grade6",
-            "DataCompleteness":"Complete"
+        "10104": {
+            "PullRate": 373.4499089961561,
+            "InfrequentDelay": 112.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "13778":{
-            "PullRate":395.4802510553781,
-            "InfrequentDelay":798.0,
-            "Plies":1.0,
-            "Grade":"Grade6",
-            "DataCompleteness":"Complete"
+        "13778": {
+            "PullRate": 395.4802510553781,
+            "InfrequentDelay": 798.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "10395":{
-            "PullRate":215.05839486395135,
-            "InfrequentDelay":880.0,
-            "Plies":1.0,
-            "Grade":"Grade4",
-            "DataCompleteness":"Complete"
+        "10395": {
+            "PullRate": 215.05839486395135,
+            "InfrequentDelay": 880.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "12444":{
-            "PullRate":NaN,
-            "InfrequentDelay":590.1333333333333,
-            "Plies":1.0,
-            "Grade":"Grade6",
-            "DataCompleteness":"Incomplete"
+        "12444": {
+            "PullRate": NaN,
+            "InfrequentDelay": 590.1333333333333,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Incomplete"
         },
-        "13863":{
-            "PullRate":426.02272817074777,
-            "InfrequentDelay":124.0,
-            "Plies":1.0,
-            "Grade":"Grade6",
-            "DataCompleteness":"Complete"
+        "13863": {
+            "PullRate": 426.02272817074777,
+            "InfrequentDelay": 124.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "13862":{
-            "PullRate":354.2213902939211,
-            "InfrequentDelay":270.0,
-            "Plies":1.0,
-            "Grade":"Grade6",
-            "DataCompleteness":"Complete"
+        "13862": {
+            "PullRate": 354.2213902939211,
+            "InfrequentDelay": 270.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "13872":{
-            "PullRate":382.5647781618064,
-            "InfrequentDelay":27.0,
-            "Plies":1.0,
-            "Grade":"Grade6",
-            "DataCompleteness":"Complete"
+        "13872": {
+            "PullRate": 382.5647781618064,
+            "InfrequentDelay": 27.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "13865":{
-            "PullRate":431.2241990852959,
-            "InfrequentDelay":211.0,
-            "Plies":1.0,
-            "Grade":"Grade6",
-            "DataCompleteness":"Complete"
+        "13865": {
+            "PullRate": 431.2241990852959,
+            "InfrequentDelay": 211.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "13811":{
-            "PullRate":405.5442285079543,
-            "InfrequentDelay":91.0,
-            "Plies":1.0,
-            "Grade":"Grade6",
-            "DataCompleteness":"Complete"
+        "13811": {
+            "PullRate": 405.5442285079543,
+            "InfrequentDelay": 91.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "13864":{
-            "PullRate":375.4935803651712,
-            "InfrequentDelay":529.0,
-            "Plies":1.0,
-            "Grade":"Grade6",
-            "DataCompleteness":"Complete"
+        "13864": {
+            "PullRate": 375.4935803651712,
+            "InfrequentDelay": 529.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "14234":{
-            "PullRate":418.9235633745371,
-            "InfrequentDelay":243.0,
-            "Plies":1.0,
-            "Grade":"Grade6",
-            "DataCompleteness":"Complete"
+        "14234": {
+            "PullRate": 418.9235633745371,
+            "InfrequentDelay": 243.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "14231":{
-            "PullRate":366.58929135912985,
-            "InfrequentDelay":8.0,
-            "Plies":1.0,
-            "Grade":"Grade6",
-            "DataCompleteness":"Complete"
+        "14231": {
+            "PullRate": 366.58929135912985,
+            "InfrequentDelay": 8.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "14233":{
-            "PullRate":354.7468406403622,
-            "InfrequentDelay":1578.0,
-            "Plies":1.0,
-            "Grade":"Grade6",
-            "DataCompleteness":"Complete"
+        "14233": {
+            "PullRate": 354.7468406403622,
+            "InfrequentDelay": 1578.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "14235":{
-            "PullRate":462.4232659131572,
-            "InfrequentDelay":63.0,
-            "Plies":1.0,
-            "Grade":"Grade6",
-            "DataCompleteness":"Complete"
+        "14235": {
+            "PullRate": 462.4232659131572,
+            "InfrequentDelay": 63.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         }
     },
-    "PB5 Winder":{
-        "13271":{
-            "PullRate":399.06107405316675,
-            "InfrequentDelay":212.0,
-            "Plies":1.0,
-            "Grade":"Grade4",
-            "DataCompleteness":"Complete"
+    "PB5 Winder": {
+        "13271": {
+            "PullRate": 399.06107405316675,
+            "InfrequentDelay": 212.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13450":{
-            "PullRate":249.16910714009762,
-            "InfrequentDelay":983.0,
-            "Plies":1.0,
-            "Grade":"Grade6",
-            "DataCompleteness":"Complete"
+        "13450": {
+            "PullRate": 249.16910714009762,
+            "InfrequentDelay": 983.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "13296":{
-            "PullRate":459.23091250040216,
-            "InfrequentDelay":320.0,
-            "Plies":1.0,
-            "Grade":"Grade4",
-            "DataCompleteness":"Complete"
+        "13296": {
+            "PullRate": 459.23091250040216,
+            "InfrequentDelay": 320.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13276":{
-            "PullRate":466.7770424362016,
-            "InfrequentDelay":5925.0,
-            "Plies":1.0,
-            "Grade":"Grade4",
-            "DataCompleteness":"Complete"
+        "13276": {
+            "PullRate": 466.7770424362016,
+            "InfrequentDelay": 5925.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "12444":{
-            "PullRate":NaN,
-            "InfrequentDelay":693.4,
-            "Plies":1.0,
-            "Grade":"Grade4",
-            "DataCompleteness":"Complete"
+        "12444": {
+            "PullRate": NaN,
+            "InfrequentDelay": 693.4,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "10109":{
-            "PullRate":311.3812950326849,
-            "InfrequentDelay":296.0,
-            "Plies":1.0,
-            "Grade":"Grade6",
-            "DataCompleteness":"Complete"
+        "10109": {
+            "PullRate": 311.3812950326849,
+            "InfrequentDelay": 296.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "13481":{
-            "PullRate":335.03106009072525,
-            "InfrequentDelay":105.0,
-            "Plies":1.0,
-            "Grade":"Grade4",
-            "DataCompleteness":"Complete"
+        "13481": {
+            "PullRate": 335.03106009072525,
+            "InfrequentDelay": 105.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13291":{
-            "PullRate":416.86220740455343,
-            "InfrequentDelay":495.0,
-            "Plies":1.0,
-            "Grade":"Grade4",
-            "DataCompleteness":"Complete"
+        "13291": {
+            "PullRate": 416.86220740455343,
+            "InfrequentDelay": 495.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13293":{
-            "PullRate":488.59417153849336,
-            "InfrequentDelay":92.0,
-            "Plies":1.0,
-            "Grade":"Grade4",
-            "DataCompleteness":"Complete"
+        "13293": {
+            "PullRate": 488.59417153849336,
+            "InfrequentDelay": 92.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "12432":{
-            "PullRate":374.2377683540266,
-            "InfrequentDelay":462.0,
-            "Plies":1.0,
-            "Grade":"Grade6",
-            "DataCompleteness":"Complete"
+        "12432": {
+            "PullRate": 374.2377683540266,
+            "InfrequentDelay": 462.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "13290":{
-            "PullRate":425.1867628418941,
-            "InfrequentDelay":852.0,
-            "Plies":1.0,
-            "Grade":"Grade4",
-            "DataCompleteness":"Complete"
+        "13290": {
+            "PullRate": 425.1867628418941,
+            "InfrequentDelay": 852.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13965":{
-            "PullRate":438.4212065343043,
-            "InfrequentDelay":28.0,
-            "Plies":1.0,
-            "Grade":"Grade4",
-            "DataCompleteness":"Complete"
+        "13965": {
+            "PullRate": 438.4212065343043,
+            "InfrequentDelay": 28.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13962":{
-            "PullRate":427.897635580862,
-            "InfrequentDelay":257.0,
-            "Plies":1.0,
-            "Grade":"Grade4",
-            "DataCompleteness":"Complete"
+        "13962": {
+            "PullRate": 427.897635580862,
+            "InfrequentDelay": 257.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13982":{
-            "PullRate":418.37370820393204,
-            "InfrequentDelay":85.0,
-            "Plies":1.0,
-            "Grade":"Grade4",
-            "DataCompleteness":"Complete"
+        "13982": {
+            "PullRate": 418.37370820393204,
+            "InfrequentDelay": 85.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13974":{
-            "PullRate":375.4586269758222,
-            "InfrequentDelay":911.0,
-            "Plies":1.0,
-            "Grade":"Grade4",
-            "DataCompleteness":"Complete"
+        "13974": {
+            "PullRate": 375.4586269758222,
+            "InfrequentDelay": 911.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13981":{
-            "PullRate":284.00729480473325,
-            "InfrequentDelay":85.0,
-            "Plies":1.0,
-            "Grade":"Grade4",
-            "DataCompleteness":"Complete"
+        "13981": {
+            "PullRate": 284.00729480473325,
+            "InfrequentDelay": 85.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13964":{
-            "PullRate":445.53980710400384,
-            "InfrequentDelay":471.0,
-            "Plies":1.0,
-            "Grade":"Grade4",
-            "DataCompleteness":"Complete"
+        "13964": {
+            "PullRate": 445.53980710400384,
+            "InfrequentDelay": 471.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13968":{
-            "PullRate":471.0767239756098,
-            "InfrequentDelay":476.0,
-            "Plies":1.0,
-            "Grade":"Grade4",
-            "DataCompleteness":"Complete"
+        "13968": {
+            "PullRate": 471.0767239756098,
+            "InfrequentDelay": 476.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13862":{
-            "PullRate":396.8336355439657,
-            "InfrequentDelay":1544.0,
-            "Plies":1.0,
-            "Grade":"Grade6",
-            "DataCompleteness":"Complete"
+        "13862": {
+            "PullRate": 396.8336355439657,
+            "InfrequentDelay": 1544.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "13870":{
-            "PullRate":484.89721477515855,
-            "InfrequentDelay":66.0,
-            "Plies":1.0,
-            "Grade":"Grade6",
-            "DataCompleteness":"Complete"
+        "13870": {
+            "PullRate": 484.89721477515855,
+            "InfrequentDelay": 66.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "13871":{
-            "PullRate":445.42051380851086,
-            "InfrequentDelay":773.0,
-            "Plies":1.0,
-            "Grade":"Grade6",
-            "DataCompleteness":"Complete"
+        "13871": {
+            "PullRate": 445.42051380851086,
+            "InfrequentDelay": 773.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "14152":{
-            "PullRate":412.0207939938908,
-            "InfrequentDelay":603.0,
-            "Plies":1.0,
-            "Grade":"Grade6",
-            "DataCompleteness":"Complete"
+        "14152": {
+            "PullRate": 412.0207939938908,
+            "InfrequentDelay": 603.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "14231":{
-            "PullRate":345.74859438690277,
-            "InfrequentDelay":114.0,
-            "Plies":1.0,
-            "Grade":"Grade6",
-            "DataCompleteness":"Complete"
+        "14231": {
+            "PullRate": 345.74859438690277,
+            "InfrequentDelay": 114.0,
+            "Plies": 1.0,
+            "Grade": "Grade6",
+            "DataCompleteness": "Complete"
         },
-        "13983":{
-            "PullRate":223.08452842255278,
-            "InfrequentDelay":87.0,
-            "Plies":1.0,
-            "Grade":"Grade4",
-            "DataCompleteness":"Complete"
+        "13983": {
+            "PullRate": 223.08452842255278,
+            "InfrequentDelay": 87.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         }
     },
-    "PB6 Winder":{
-        "13301":{
-            "PullRate":447.09469976814245,
-            "InfrequentDelay":498.0,
-            "Plies":2.0,
-            "Grade":"Grade5",
-            "DataCompleteness":"Complete"
+    "PB6 Winder": {
+        "13301": {
+            "PullRate": 447.09469976814245,
+            "InfrequentDelay": 498.0,
+            "Plies": 2.0,
+            "Grade": "Grade5",
+            "DataCompleteness": "Complete"
         },
-        "13291":{
-            "PullRate":333.67603361115545,
-            "InfrequentDelay":884.0,
-            "Plies":1.0,
-            "Grade":"Grade4",
-            "DataCompleteness":"Complete"
+        "13291": {
+            "PullRate": 333.67603361115545,
+            "InfrequentDelay": 884.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13308":{
-            "PullRate":605.7008224865318,
-            "InfrequentDelay":1905.0,
-            "Plies":2.0,
-            "Grade":"Grade5",
-            "DataCompleteness":"Complete"
+        "13308": {
+            "PullRate": 605.7008224865318,
+            "InfrequentDelay": 1905.0,
+            "Plies": 2.0,
+            "Grade": "Grade5",
+            "DataCompleteness": "Complete"
         },
-        "13289":{
-            "PullRate":346.64030490230806,
-            "InfrequentDelay":4.0,
-            "Plies":1.0,
-            "Grade":"Grade4",
-            "DataCompleteness":"Complete"
+        "13289": {
+            "PullRate": 346.64030490230806,
+            "InfrequentDelay": 4.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13293":{
-            "PullRate":345.3009092560371,
-            "InfrequentDelay":119.0,
-            "Plies":1.0,
-            "Grade":"Grade4",
-            "DataCompleteness":"Complete"
+        "13293": {
+            "PullRate": 345.3009092560371,
+            "InfrequentDelay": 119.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13276":{
-            "PullRate":310.09474388304085,
-            "InfrequentDelay":424.0,
-            "Plies":1.0,
-            "Grade":"Grade4",
-            "DataCompleteness":"Complete"
+        "13276": {
+            "PullRate": 310.09474388304085,
+            "InfrequentDelay": 424.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13310":{
-            "PullRate":569.6798072560499,
-            "InfrequentDelay":182.0,
-            "Plies":2.0,
-            "Grade":"Grade5",
-            "DataCompleteness":"Complete"
+        "13310": {
+            "PullRate": 569.6798072560499,
+            "InfrequentDelay": 182.0,
+            "Plies": 2.0,
+            "Grade": "Grade5",
+            "DataCompleteness": "Complete"
         },
-        "13302":{
-            "PullRate":467.73002836908546,
-            "InfrequentDelay":86.0,
-            "Plies":2.0,
-            "Grade":"Grade5",
-            "DataCompleteness":"Complete"
+        "13302": {
+            "PullRate": 467.73002836908546,
+            "InfrequentDelay": 86.0,
+            "Plies": 2.0,
+            "Grade": "Grade5",
+            "DataCompleteness": "Complete"
         },
-        "13311":{
-            "PullRate":630.9382981413905,
-            "InfrequentDelay":48.0,
-            "Plies":2.0,
-            "Grade":"Grade5",
-            "DataCompleteness":"Complete"
+        "13311": {
+            "PullRate": 630.9382981413905,
+            "InfrequentDelay": 48.0,
+            "Plies": 2.0,
+            "Grade": "Grade5",
+            "DataCompleteness": "Complete"
         },
-        "13299":{
-            "PullRate":426.3655382098021,
-            "InfrequentDelay":152.0,
-            "Plies":2.0,
-            "Grade":"Grade5",
-            "DataCompleteness":"Complete"
+        "13299": {
+            "PullRate": 426.3655382098021,
+            "InfrequentDelay": 152.0,
+            "Plies": 2.0,
+            "Grade": "Grade5",
+            "DataCompleteness": "Complete"
         },
-        "13312":{
-            "PullRate":482.8880435523013,
-            "InfrequentDelay":907.0,
-            "Plies":2.0,
-            "Grade":"Grade5",
-            "DataCompleteness":"Complete"
+        "13312": {
+            "PullRate": 482.8880435523013,
+            "InfrequentDelay": 907.0,
+            "Plies": 2.0,
+            "Grade": "Grade5",
+            "DataCompleteness": "Complete"
         },
-        "13949":{
-            "PullRate":583.4395422495421,
-            "InfrequentDelay":375.0,
-            "Plies":2.0,
-            "Grade":"Grade5",
-            "DataCompleteness":"Complete"
+        "13949": {
+            "PullRate": 583.4395422495421,
+            "InfrequentDelay": 375.0,
+            "Plies": 2.0,
+            "Grade": "Grade5",
+            "DataCompleteness": "Complete"
         },
-        "13964":{
-            "PullRate":388.9737719857574,
-            "InfrequentDelay":27.0,
-            "Plies":1.0,
-            "Grade":"Grade4",
-            "DataCompleteness":"Complete"
+        "13964": {
+            "PullRate": 388.9737719857574,
+            "InfrequentDelay": 27.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13974":{
-            "PullRate":291.9146752923943,
-            "InfrequentDelay":165.0,
-            "Plies":1.0,
-            "Grade":"Grade4",
-            "DataCompleteness":"Complete"
+        "13974": {
+            "PullRate": 291.9146752923943,
+            "InfrequentDelay": 165.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13948":{
-            "PullRate":589.76900470405,
-            "InfrequentDelay":33.0,
-            "Plies":2.0,
-            "Grade":"Grade5",
-            "DataCompleteness":"Complete"
+        "13948": {
+            "PullRate": 589.76900470405,
+            "InfrequentDelay": 33.0,
+            "Plies": 2.0,
+            "Grade": "Grade5",
+            "DataCompleteness": "Complete"
         },
-        "13945":{
-            "PullRate":466.33349836915096,
-            "InfrequentDelay":975.0,
-            "Plies":2.0,
-            "Grade":"Grade5",
-            "DataCompleteness":"Complete"
+        "13945": {
+            "PullRate": 466.33349836915096,
+            "InfrequentDelay": 975.0,
+            "Plies": 2.0,
+            "Grade": "Grade5",
+            "DataCompleteness": "Complete"
         },
-        "13962":{
-            "PullRate":390.2919184710247,
-            "InfrequentDelay":374.0,
-            "Plies":1.0,
-            "Grade":"Grade4",
-            "DataCompleteness":"Complete"
+        "13962": {
+            "PullRate": 390.2919184710247,
+            "InfrequentDelay": 374.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13971":{
-            "PullRate":344.35850521166907,
-            "InfrequentDelay":207.0,
-            "Plies":1.0,
-            "Grade":"Grade4",
-            "DataCompleteness":"Complete"
+        "13971": {
+            "PullRate": 344.35850521166907,
+            "InfrequentDelay": 207.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13969":{
-            "PullRate":209.45019496037753,
-            "InfrequentDelay":321.0,
-            "Plies":1.0,
-            "Grade":"Grade4",
-            "DataCompleteness":"Complete"
+        "13969": {
+            "PullRate": 209.45019496037753,
+            "InfrequentDelay": 321.0,
+            "Plies": 1.0,
+            "Grade": "Grade4",
+            "DataCompleteness": "Complete"
         },
-        "13944":{
-            "PullRate":560.2542063591095,
-            "InfrequentDelay":656.0,
-            "Plies":2.0,
-            "Grade":"Grade5",
-            "DataCompleteness":"Complete"
+        "13944": {
+            "PullRate": 560.2542063591095,
+            "InfrequentDelay": 656.0,
+            "Plies": 2.0,
+            "Grade": "Grade5",
+            "DataCompleteness": "Complete"
         },
-        "13943":{
-            "PullRate":394.1361333476655,
-            "InfrequentDelay":32.0,
-            "Plies":2.0,
-            "Grade":"Grade5",
-            "DataCompleteness":"Complete"
+        "13943": {
+            "PullRate": 394.1361333476655,
+            "InfrequentDelay": 32.0,
+            "Plies": 2.0,
+            "Grade": "Grade5",
+            "DataCompleteness": "Complete"
         },
-        "14206":{
-            "PullRate":635.6972123052674,
-            "InfrequentDelay":123.0,
-            "Plies":2.0,
-            "Grade":"Grade5",
-            "DataCompleteness":"Complete"
+        "14206": {
+            "PullRate": 635.6972123052674,
+            "InfrequentDelay": 123.0,
+            "Plies": 2.0,
+            "Grade": "Grade5",
+            "DataCompleteness": "Complete"
         },
-        "14198":{
-            "PullRate":652.215376954697,
-            "InfrequentDelay":168.0,
-            "Plies":2.0,
-            "Grade":"Grade5",
-            "DataCompleteness":"Complete"
+        "14198": {
+            "PullRate": 652.215376954697,
+            "InfrequentDelay": 168.0,
+            "Plies": 2.0,
+            "Grade": "Grade5",
+            "DataCompleteness": "Complete"
         },
-        "14205":{
-            "PullRate":647.553048934306,
-            "InfrequentDelay":121.0,
-            "Plies":2.0,
-            "Grade":"Grade5",
-            "DataCompleteness":"Complete"
+        "14205": {
+            "PullRate": 647.553048934306,
+            "InfrequentDelay": 121.0,
+            "Plies": 2.0,
+            "Grade": "Grade5",
+            "DataCompleteness": "Complete"
         },
-        "14208":{
-            "PullRate":543.9863507338061,
-            "InfrequentDelay":417.4,
-            "Plies":2.0,
-            "Grade":"Grade5",
-            "DataCompleteness":"Incomplete"
+        "14208": {
+            "PullRate": 543.9863507338061,
+            "InfrequentDelay": 417.4,
+            "Plies": 2.0,
+            "Grade": "Grade5",
+            "DataCompleteness": "Incomplete"
         }
     },
-    "L07 Winder":{
-        "13258":{
-            "PullRate":556.7695466251204,
-            "InfrequentDelay":219.0,
-            "Plies":2.0,
-            "Grade":"Grade5",
-            "DataCompleteness":"Complete"
+    "L07 Winder": {
+        "13258": {
+            "PullRate": 556.7695466251204,
+            "InfrequentDelay": 219.0,
+            "Plies": 2.0,
+            "Grade": "Grade5",
+            "DataCompleteness": "Complete"
         },
-        "13807":{
-            "PullRate":490.30242644396077,
-            "InfrequentDelay":324.0,
-            "Plies":2.0,
-            "Grade":"Grade5",
-            "DataCompleteness":"Complete"
+        "13807": {
+            "PullRate": 490.30242644396077,
+            "InfrequentDelay": 324.0,
+            "Plies": 2.0,
+            "Grade": "Grade5",
+            "DataCompleteness": "Complete"
         },
-        "14166":{
-            "PullRate":538.0673318332633,
-            "InfrequentDelay":536.0,
-            "Plies":2.0,
-            "Grade":"Grade5",
-            "DataCompleteness":"Complete"
+        "14166": {
+            "PullRate": 538.0673318332633,
+            "InfrequentDelay": 536.0,
+            "Plies": 2.0,
+            "Grade": "Grade5",
+            "DataCompleteness": "Complete"
         },
-        "12444":{
-            "PullRate":NaN,
-            "InfrequentDelay":359.6666666666667,
-            "Plies":2.0,
-            "Grade":"Grade5",
-            "DataCompleteness":"Incomplete"
+        "12444": {
+            "PullRate": NaN,
+            "InfrequentDelay": 359.6666666666667,
+            "Plies": 2.0,
+            "Grade": "Grade5",
+            "DataCompleteness": "Incomplete"
         }
     },
-    "L08 Winder":{
-        "13385":{
-            "PullRate":673.6202928014187,
-            "InfrequentDelay":1277.0,
-            "Plies":2.0,
-            "Grade":"Grade5",
-            "DataCompleteness":"Complete"
+    "L08 Winder": {
+        "13385": {
+            "PullRate": 673.6202928014187,
+            "InfrequentDelay": 1277.0,
+            "Plies": 2.0,
+            "Grade": "Grade5",
+            "DataCompleteness": "Complete"
         },
-        "13272":{
-            "PullRate":632.4034060029138,
-            "InfrequentDelay":466.0,
-            "Plies":2.0,
-            "Grade":"Grade5",
-            "DataCompleteness":"Complete"
+        "13272": {
+            "PullRate": 632.4034060029138,
+            "InfrequentDelay": 466.0,
+            "Plies": 2.0,
+            "Grade": "Grade5",
+            "DataCompleteness": "Complete"
         },
-        "13258":{
-            "PullRate":661.9413527886015,
-            "InfrequentDelay":1299.0,
-            "Plies":2.0,
-            "Grade":"Grade5",
-            "DataCompleteness":"Complete"
+        "13258": {
+            "PullRate": 661.9413527886015,
+            "InfrequentDelay": 1299.0,
+            "Plies": 2.0,
+            "Grade": "Grade5",
+            "DataCompleteness": "Complete"
         },
-        "12444":{
-            "PullRate":NaN,
-            "InfrequentDelay":1097.857142857143,
-            "Plies":2.0,
-            "Grade":"Grade5",
-            "DataCompleteness":"Incomplete"
+        "12444": {
+            "PullRate": NaN,
+            "InfrequentDelay": 1097.857142857143,
+            "Plies": 2.0,
+            "Grade": "Grade5",
+            "DataCompleteness": "Incomplete"
         },
-        "13551":{
-            "PullRate":685.7403178935838,
-            "InfrequentDelay":619.0,
-            "Plies":2.0,
-            "Grade":"Grade5",
-            "DataCompleteness":"Complete"
+        "13551": {
+            "PullRate": 685.7403178935838,
+            "InfrequentDelay": 619.0,
+            "Plies": 2.0,
+            "Grade": "Grade5",
+            "DataCompleteness": "Complete"
         },
-        "13807":{
-            "PullRate":660.4506585074786,
-            "InfrequentDelay":455.0,
-            "Plies":2.0,
-            "Grade":"Grade5",
-            "DataCompleteness":"Complete"
+        "13807": {
+            "PullRate": 660.4506585074786,
+            "InfrequentDelay": 455.0,
+            "Plies": 2.0,
+            "Grade": "Grade5",
+            "DataCompleteness": "Complete"
         },
-        "13808":{
-            "PullRate":747.0465253050411,
-            "InfrequentDelay":3254.0,
-            "Plies":2.0,
-            "Grade":"Grade5",
-            "DataCompleteness":"Complete"
+        "13808": {
+            "PullRate": 747.0465253050411,
+            "InfrequentDelay": 3254.0,
+            "Plies": 2.0,
+            "Grade": "Grade5",
+            "DataCompleteness": "Complete"
         },
-        "13809":{
-            "PullRate":812.7014802853297,
-            "InfrequentDelay":315.0,
-            "Plies":2.0,
-            "Grade":"Grade5",
-            "DataCompleteness":"Complete"
+        "13809": {
+            "PullRate": 812.7014802853297,
+            "InfrequentDelay": 315.0,
+            "Plies": 2.0,
+            "Grade": "Grade5",
+            "DataCompleteness": "Complete"
         }
     },
-    "L09 Winder":{
-        "9505":{
-            "PullRate":270.69558361239956,
-            "InfrequentDelay":1237.0,
-            "Plies":1.0,
-            "Grade":"Grade3",
-            "DataCompleteness":"Complete"
+    "L09 Winder": {
+        "9505": {
+            "PullRate": 270.69558361239956,
+            "InfrequentDelay": 1237.0,
+            "Plies": 1.0,
+            "Grade": "Grade3",
+            "DataCompleteness": "Complete"
         },
-        "10678":{
-            "PullRate":490.9666528207943,
-            "InfrequentDelay":299.0,
-            "Plies":2.0,
-            "Grade":"Grade1",
-            "DataCompleteness":"Complete"
+        "10678": {
+            "PullRate": 490.9666528207943,
+            "InfrequentDelay": 299.0,
+            "Plies": 2.0,
+            "Grade": "Grade1",
+            "DataCompleteness": "Complete"
         },
-        "12446":{
-            "PullRate":369.05590413663475,
-            "InfrequentDelay":334.0,
-            "Plies":2.0,
-            "Grade":"Grade1",
-            "DataCompleteness":"Complete"
+        "12446": {
+            "PullRate": 369.05590413663475,
+            "InfrequentDelay": 334.0,
+            "Plies": 2.0,
+            "Grade": "Grade1",
+            "DataCompleteness": "Complete"
         },
-        "11510":{
-            "PullRate":587.8772312290972,
-            "InfrequentDelay":27.0,
-            "Plies":2.0,
-            "Grade":"Grade1",
-            "DataCompleteness":"Complete"
+        "11510": {
+            "PullRate": 587.8772312290972,
+            "InfrequentDelay": 27.0,
+            "Plies": 2.0,
+            "Grade": "Grade1",
+            "DataCompleteness": "Complete"
         },
-        "13277":{
-            "PullRate":403.14910294287785,
-            "InfrequentDelay":168.0,
-            "Plies":2.0,
-            "Grade":"Grade1",
-            "DataCompleteness":"Complete"
+        "13277": {
+            "PullRate": 403.14910294287785,
+            "InfrequentDelay": 168.0,
+            "Plies": 2.0,
+            "Grade": "Grade1",
+            "DataCompleteness": "Complete"
         },
-        "10677":{
-            "PullRate":224.17351988820369,
-            "InfrequentDelay":234.0,
-            "Plies":2.0,
-            "Grade":"Grade1",
-            "DataCompleteness":"Complete"
+        "10677": {
+            "PullRate": 224.17351988820369,
+            "InfrequentDelay": 234.0,
+            "Plies": 2.0,
+            "Grade": "Grade1",
+            "DataCompleteness": "Complete"
         },
-        "13820":{
-            "PullRate":428.7199721662111,
-            "InfrequentDelay":290.0,
-            "Plies":2.0,
-            "Grade":"Grade1",
-            "DataCompleteness":"Complete"
+        "13820": {
+            "PullRate": 428.7199721662111,
+            "InfrequentDelay": 290.0,
+            "Plies": 2.0,
+            "Grade": "Grade1",
+            "DataCompleteness": "Complete"
         },
-        "13817":{
-            "PullRate":303.03722973391183,
-            "InfrequentDelay":573.0,
-            "Plies":1.0,
-            "Grade":"Grade3",
-            "DataCompleteness":"Complete"
+        "13817": {
+            "PullRate": 303.03722973391183,
+            "InfrequentDelay": 573.0,
+            "Plies": 1.0,
+            "Grade": "Grade3",
+            "DataCompleteness": "Complete"
         },
-        "13819":{
-            "PullRate":286.86640667315567,
-            "InfrequentDelay":905.0,
-            "Plies":1.0,
-            "Grade":"Grade3",
-            "DataCompleteness":"Incomplete"
+        "13819": {
+            "PullRate": 286.86640667315567,
+            "InfrequentDelay": 905.0,
+            "Plies": 1.0,
+            "Grade": "Grade3",
+            "DataCompleteness": "Incomplete"
         },
-        "12444":{
-            "PullRate":NaN,
-            "InfrequentDelay":905.0,
-            "Plies":1.0,
-            "Grade":"Grade3",
-            "DataCompleteness":"Complete"
+        "12444": {
+            "PullRate": NaN,
+            "InfrequentDelay": 905.0,
+            "Plies": 1.0,
+            "Grade": "Grade3",
+            "DataCompleteness": "Complete"
         }
     },
-    "L10 Winder":{
-        "11491":{
-            "PullRate":270.5043596065015,
-            "InfrequentDelay":813.0,
-            "Plies":1.0,
-            "Grade":"Grade3",
-            "DataCompleteness":"Complete"
+    "L10 Winder": {
+        "11491": {
+            "PullRate": 270.5043596065015,
+            "InfrequentDelay": 813.0,
+            "Plies": 1.0,
+            "Grade": "Grade3",
+            "DataCompleteness": "Complete"
         },
-        "10889":{
-            "PullRate":255.14089374767696,
-            "InfrequentDelay":111.0,
-            "Plies":1.0,
-            "Grade":"Grade3",
-            "DataCompleteness":"Complete"
+        "10889": {
+            "PullRate": 255.14089374767696,
+            "InfrequentDelay": 111.0,
+            "Plies": 1.0,
+            "Grade": "Grade3",
+            "DataCompleteness": "Complete"
         },
-        "9504":{
-            "PullRate":352.1384870560473,
-            "InfrequentDelay":175.0,
-            "Plies":1.0,
-            "Grade":"Grade3",
-            "DataCompleteness":"Complete"
+        "9504": {
+            "PullRate": 352.1384870560473,
+            "InfrequentDelay": 175.0,
+            "Plies": 1.0,
+            "Grade": "Grade3",
+            "DataCompleteness": "Complete"
         },
-        "12444":{
-            "PullRate":NaN,
-            "InfrequentDelay":288.0,
-            "Plies":1.0,
-            "Grade":"Grade3",
-            "DataCompleteness":"Complete"
+        "12444": {
+            "PullRate": NaN,
+            "InfrequentDelay": 288.0,
+            "Plies": 1.0,
+            "Grade": "Grade3",
+            "DataCompleteness": "Complete"
         },
-        "9505":{
-            "PullRate":420.9848546543936,
-            "InfrequentDelay":135.0,
-            "Plies":1.0,
-            "Grade":"Grade3",
-            "DataCompleteness":"Complete"
+        "9505": {
+            "PullRate": 420.9848546543936,
+            "InfrequentDelay": 135.0,
+            "Plies": 1.0,
+            "Grade": "Grade3",
+            "DataCompleteness": "Complete"
         },
-        "13817":{
-            "PullRate":289.1936032479837,
-            "InfrequentDelay":247.0,
-            "Plies":1.0,
-            "Grade":"Grade3",
-            "DataCompleteness":"Complete"
+        "13817": {
+            "PullRate": 289.1936032479837,
+            "InfrequentDelay": 247.0,
+            "Plies": 1.0,
+            "Grade": "Grade3",
+            "DataCompleteness": "Complete"
         },
-        "13818":{
-            "PullRate":158.03877903667032,
-            "InfrequentDelay":381.0,
-            "Plies":1.0,
-            "Grade":"Grade3",
-            "DataCompleteness":"Complete"
+        "13818": {
+            "PullRate": 158.03877903667032,
+            "InfrequentDelay": 381.0,
+            "Plies": 1.0,
+            "Grade": "Grade3",
+            "DataCompleteness": "Complete"
         },
-        "13816":{
-            "PullRate":235.91089103509898,
-            "InfrequentDelay":102.0,
-            "Plies":1.0,
-            "Grade":"Grade3",
-            "DataCompleteness":"Complete"
+        "13816": {
+            "PullRate": 235.91089103509898,
+            "InfrequentDelay": 102.0,
+            "Plies": 1.0,
+            "Grade": "Grade3",
+            "DataCompleteness": "Complete"
         },
-        "13819":{
-            "PullRate":301.45961290869155,
-            "InfrequentDelay":340.0,
-            "Plies":1.0,
-            "Grade":"Grade3",
-            "DataCompleteness":"Complete"
+        "13819": {
+            "PullRate": 301.45961290869155,
+            "InfrequentDelay": 340.0,
+            "Plies": 1.0,
+            "Grade": "Grade3",
+            "DataCompleteness": "Complete"
         }
     },
-    "L11 Winder":{
-        "12946":{
-            "PullRate":369.40389517616353,
-            "InfrequentDelay":2133.0,
-            "Plies":1.0,
-            "Grade":"Grade3",
-            "DataCompleteness":"Complete"
+    "L11 Winder": {
+        "12946": {
+            "PullRate": 369.40389517616353,
+            "InfrequentDelay": 2133.0,
+            "Plies": 1.0,
+            "Grade": "Grade3",
+            "DataCompleteness": "Complete"
         },
-        "10509":{
-            "PullRate":475.7332505097633,
-            "InfrequentDelay":958.0,
-            "Plies":1.0,
-            "Grade":"Grade3",
-            "DataCompleteness":"Complete"
+        "10509": {
+            "PullRate": 475.7332505097633,
+            "InfrequentDelay": 958.0,
+            "Plies": 1.0,
+            "Grade": "Grade3",
+            "DataCompleteness": "Complete"
         },
-        "9504":{
-            "PullRate":543.1020004404996,
-            "InfrequentDelay":801.0,
-            "Plies":1.0,
-            "Grade":"Grade3",
-            "DataCompleteness":"Complete"
+        "9504": {
+            "PullRate": 543.1020004404996,
+            "InfrequentDelay": 801.0,
+            "Plies": 1.0,
+            "Grade": "Grade3",
+            "DataCompleteness": "Complete"
         },
-        "11491":{
-            "PullRate":516.9899295664101,
-            "InfrequentDelay":833.0,
-            "Plies":1.0,
-            "Grade":"Grade3",
-            "DataCompleteness":"Complete"
+        "11491": {
+            "PullRate": 516.9899295664101,
+            "InfrequentDelay": 833.0,
+            "Plies": 1.0,
+            "Grade": "Grade3",
+            "DataCompleteness": "Complete"
         },
-        "12444":{
-            "PullRate":NaN,
-            "InfrequentDelay":806.4285714285714,
-            "Plies":1.0,
-            "Grade":"Grade3",
-            "DataCompleteness":"Incomplete"
+        "12444": {
+            "PullRate": NaN,
+            "InfrequentDelay": 806.4285714285714,
+            "Plies": 1.0,
+            "Grade": "Grade3",
+            "DataCompleteness": "Incomplete"
         },
-        "13816":{
-            "PullRate":500.291657329293,
-            "InfrequentDelay":256.0,
-            "Plies":1.0,
-            "Grade":"Grade3",
-            "DataCompleteness":"Complete"
+        "13816": {
+            "PullRate": 500.291657329293,
+            "InfrequentDelay": 256.0,
+            "Plies": 1.0,
+            "Grade": "Grade3",
+            "DataCompleteness": "Complete"
         },
-        "13817":{
-            "PullRate":518.0041811023326,
-            "InfrequentDelay":332.0,
-            "Plies":1.0,
-            "Grade":"Grade3",
-            "DataCompleteness":"Complete"
+        "13817": {
+            "PullRate": 518.0041811023326,
+            "InfrequentDelay": 332.0,
+            "Plies": 1.0,
+            "Grade": "Grade3",
+            "DataCompleteness": "Complete"
         },
-        "13819":{
-            "PullRate":504.4160748378825,
-            "InfrequentDelay":332.0,
-            "Plies":1.0,
-            "Grade":"Grade3",
-            "DataCompleteness":"Complete"
+        "13819": {
+            "PullRate": 504.4160748378825,
+            "InfrequentDelay": 332.0,
+            "Plies": 1.0,
+            "Grade": "Grade3",
+            "DataCompleteness": "Complete"
         }
     },
-    "CFR1 Parent Rolls":{
-        "12117":{
-            "PullRate":295.8340610289837,
-            "InfrequentDelay":319.0,
-            "Plies":1.0,
-            "Grade":"Grade2",
-            "DataCompleteness":"Complete"
+    "CFR1 Parent Rolls": {
+        "12117": {
+            "PullRate": 295.8340610289837,
+            "InfrequentDelay": 319.0,
+            "Plies": 1.0,
+            "Grade": "Grade2",
+            "DataCompleteness": "Complete"
         },
-        "12119":{
-            "PullRate":210.83038111530814,
-            "InfrequentDelay":48.0,
-            "Plies":1.0,
-            "Grade":"Grade2",
-            "DataCompleteness":"Complete"
+        "12119": {
+            "PullRate": 210.83038111530814,
+            "InfrequentDelay": 48.0,
+            "Plies": 1.0,
+            "Grade": "Grade2",
+            "DataCompleteness": "Complete"
         },
-        "921":{
-            "PullRate":296.6315450627167,
-            "InfrequentDelay":78.0,
-            "Plies":1.0,
-            "Grade":"Grade2",
-            "DataCompleteness":"Complete"
+        "921": {
+            "PullRate": 296.6315450627167,
+            "InfrequentDelay": 78.0,
+            "Plies": 1.0,
+            "Grade": "Grade2",
+            "DataCompleteness": "Complete"
         }
     },
-    "TM3 Machine":{
-        "391":{
-            "PullRate":-2531.57962962963,
-            "InfrequentDelay":4.0,
-            "Grade":"Grade5"
+    "TM3 Machine": {
+        "391": {
+            "PullRate": -2531.57962962963,
+            "InfrequentDelay": 4.0,
+            "Grade": "Grade5"
         },
-        "3955":{
-            "PullRate":-2395.553516819572,
-            "InfrequentDelay":236.0,
-            "Grade":"Grade4"
+        "3955": {
+            "PullRate": -2395.553516819572,
+            "InfrequentDelay": 236.0,
+            "Grade": "Grade4"
         },
-        "6507":{
-            "PullRate":-2254.2481254260397,
-            "InfrequentDelay":58.0,
-            "Grade":"Grade2"
+        "6507": {
+            "PullRate": -2254.2481254260397,
+            "InfrequentDelay": 58.0,
+            "Grade": "Grade2"
         },
-        "2516":{
-            "PullRate":NaN,
-            "InfrequentDelay":NaN,
-            "Grade":NaN
+        "2516": {
+            "PullRate": NaN,
+            "InfrequentDelay": NaN,
+            "Grade": NaN
         },
-        "1713":{
-            "PullRate":-2730.9777052746053,
-            "InfrequentDelay":0.0,
-            "Grade":"Grade6"
+        "1713": {
+            "PullRate": -2730.9777052746053,
+            "InfrequentDelay": 0.0,
+            "Grade": "Grade6"
         }
     },
-    "BI4 Machine":{
-        "1251":{
-            "PullRate":-2670.994601307975,
-            "InfrequentDelay":25.0,
-            "Grade":"Grade3"
+    "BI4 Machine": {
+        "1251": {
+            "PullRate": -2670.994601307975,
+            "InfrequentDelay": 25.0,
+            "Grade": "Grade3"
         },
-        "1253":{
-            "PullRate":-2428.3115940733946,
-            "InfrequentDelay":1110.0,
-            "Grade":"Grade6"
+        "1253": {
+            "PullRate": -2428.3115940733946,
+            "InfrequentDelay": 1110.0,
+            "Grade": "Grade6"
         },
-        "10077":{
-            "PullRate":-2399.551874145594,
-            "InfrequentDelay":23.0,
-            "Grade":"Grade5"
+        "10077": {
+            "PullRate": -2399.551874145594,
+            "InfrequentDelay": 23.0,
+            "Grade": "Grade5"
         },
-        "10520":{
-            "PullRate":-2826.8269081867943,
-            "InfrequentDelay":9.0,
-            "Grade":"Grade1"
+        "10520": {
+            "PullRate": -2826.8269081867943,
+            "InfrequentDelay": 9.0,
+            "Grade": "Grade1"
         },
-        "1592":{
-            "PullRate":NaN,
-            "InfrequentDelay":95.0,
-            "Grade":NaN
+        "1592": {
+            "PullRate": NaN,
+            "InfrequentDelay": 95.0,
+            "Grade": NaN
         },
-        "1252":{
-            "PullRate":-2704.93845539726,
-            "InfrequentDelay":170.0,
-            "Grade":"Grade4"
+        "1252": {
+            "PullRate": -2704.93845539726,
+            "InfrequentDelay": 170.0,
+            "Grade": "Grade4"
         },
-        "5914":{
-            "PullRate":-2477.5518981008513,
-            "InfrequentDelay":19.0,
-            "Grade":"Grade2"
+        "5914": {
+            "PullRate": -2477.5518981008513,
+            "InfrequentDelay": 19.0,
+            "Grade": "Grade2"
         },
-        "13812":{
-            "PullRate":NaN,
-            "InfrequentDelay":27.0,
-            "Grade":NaN
+        "13812": {
+            "PullRate": NaN,
+            "InfrequentDelay": 27.0,
+            "Grade": NaN
         },
-        "2516":{
-            "PullRate":NaN,
-            "InfrequentDelay":24.0,
-            "Grade":NaN
+        "2516": {
+            "PullRate": NaN,
+            "InfrequentDelay": 24.0,
+            "Grade": NaN
         }
     }
 }
