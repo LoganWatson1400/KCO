@@ -64,7 +64,31 @@ def enablePrint():
 
 #################################
 
+# each ProductionUnit in planningSchedule.json will have a chance to draw 1 of the 13 ProductionUnit in InitialPOs.json
+#this is a dict like this
+"""
+ProductionUnit 1: {prob1, prob2, ..., prob 13}
+ProductionUnit 2: {prob1, prob2, ..., prob 13}
+...
+ProductionUnit 84: {prob1, prob2, ..., prob 13}
+"""
+machineProbWeights = {}
 
+# similar for Prod_Id just refrencing SKU_Pull_Rate_Dict.json at key ProductionUnit n
+"""
+Prod_Id 1 given ProductionUnit 1: {prob1, prob2, ..., prob n} n == size of ProductionUnit 1 in InitialPOs.json
+Prod_Id 2 given ProductionUnit 2: {prob1, prob2, ..., prob n} n == size of ProductionUnit 2 in InitialPOs.json
+...
+Prod_Id n given ProductionUnit n: {prob1, prob2, ..., prob n} n == size of ProductionUnit n in InitialPOs.json
+"""
+prod_IDWeights = {}
+
+def scaleWeights(df, loss):
+    
+
+
+
+df.to_json(outSchedule, indent=4)
 best = -364453 ## no change
 iterations = 0
 anxiety = 0
