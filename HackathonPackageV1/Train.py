@@ -63,7 +63,7 @@ def enablePrint():
     sys.stdout = sys.__stdout__
 
 #################################
-
+allRuns = {}
 # each ProductionUnit in planningSchedule.json will have a chance to draw 1 of the 13 ProductionUnit in InitialPOs.json
 #this is a dict like this
 """
@@ -83,8 +83,8 @@ Prod_Id n given ProductionUnit n: {prob1, prob2, ..., prob n} n == size of Produ
 """
 prod_IDWeights = {}
 
-def scaleWeights(df, loss):
-    
+
+
 
 
 
@@ -114,14 +114,19 @@ while iterations < EPOCS and anxiety < anger:
 
     # write to officialScorer input file
     df.to_json(outSchedule, indent=4)
-    (loss, z) = officialScorer(outRoot, weeks[week]) #week is default #TODO can use breakdown to optimize
+    try:
+        (loss, z) = officialScorer(outRoot, weeks[week]) #week is default #TODO can use breakdown to optimize
+    except:
+        continue
+
+    # allRuns.update((loss, df))
 
     # Save best schedule
-    if loss > best:
-        best = loss
-        # save best schedule to seperate file
-        df.to_json(bestSchedule, indent=4)
-        patients = 0
+    # if loss > best:
+    #     best = loss
+    #     # save best schedule to seperate file
+    #     df.to_json(bestSchedule, indent=4)
+    #     patients = 0
     
     print('\n\n')
     enablePrint() ########################################################
