@@ -15,7 +15,7 @@ weeks = [
 
 
 EPOCS = 1000
-patience = 100
+anger = 100
 
 #Static paths
 csv = 'tag_value_pairs.csv'
@@ -25,9 +25,7 @@ InitialPaths = glob.glob(root + f'\\{weeks[week]}\\*.json')
 temp = {}
 for i in InitialPaths:
     temp[os.path.basename(i)] = i
-InitialPaths = temp
-
-# print(InitialPaths['initialPOs.json']) #How to get
+InitialPaths = temp   # print(InitialPaths['initialPOs.json']) #How to get
 
 #Output Paths
 outRoot = 'HackathonPackageV1\\PredDataCache\\OptimizerSituations'
@@ -38,12 +36,9 @@ bestSchedule = 'HackathonPackageV1\\BestSchedule.json'
 
 df = pd.read_json(staticPath)
 IData = pd.read_json(InitialPaths['initialPOs.json'])
-SKUDict = pd.read_json(InitialPaths['SKU_Pull_Rate_Dict.json'])
 
-
-SKUDict.to_csv('tag_value_pairs.csv')
 ### SKU Dicts ###
-# SKUDict['CFR1 Parent Rolls'].dropna().to_csv('tag_value_pairs.csv')
+SKUDict = pd.read_json(InitialPaths['SKU_Pull_Rate_Dict.json'])
 
 ### Catagorical Data ###
 PUnits = IData['ProductionUnit'].unique()
@@ -58,9 +53,7 @@ ForeEndMIN = IData['ForecastEndTime'].min()
 ForeEndMAX = IData['ForecastEndTime'].max()
  
 
-
-### randomizer ###TODO
-
+### Disable printing commands ###
 # Disable
 def blockPrint():
     sys.stdout = open(os.devnull, 'w')
@@ -69,32 +62,41 @@ def blockPrint():
 def enablePrint():
     sys.stdout = sys.__stdout__
 
+#################################
+
 
 best = -364453 ## no change
 iterations = 0
 anxiety = 0
-while iterations < EPOCS and anxiety < patience:
+while iterations < EPOCS and anxiety < anger:
+
+    # Stop Roll_inventory_Opimizer_Scoring from printing
     blockPrint() ##########################################################
     iterations += 1
     anxiety += 1
     
 
-    new_PUnits = random.choices(PUnits, k=len(df['ProductionUnit']))
+    ### randomizer ###
+    # set list of ProducitonUnits in planningSchedule.json to a random producitonUnit from initialPOs.json
+    df['ProductionUnit'] = random.choices(PUnits, k=len(df['ProductionUnit']))
 
-    df['ProductionUnit'] = new_PUnits
-
+    # given the productionUnit at key, set Prod_ID at key to random Prod_ID under given ProductionUnit in SKU_Pull_Rate_Dict.json
     for key, val in df['ProductionUnit'].items():
         df['Prod_Id'][key] = random.choice(SKUDict[val].dropna().keys())
+        df.to_csv(csv)
 
-    #TODO random start and end time
+    ######
+    #TODO create optimizer to make educated guesses for 'good' production unit and Prod_ID combos
 
+    # write to officialScorer input file
     df.to_json(outSchedule, indent=4)
     (loss, z) = officialScorer(outRoot, weeks[week]) #week is default #TODO can use breakdown to optimize
-    # print(f'loss: {loss}: breakdown: {breakdown}')
+
+    # Save best schedule
     if loss > best:
         best = loss
+        # save best schedule to seperate file
         df.to_json(bestSchedule, indent=4)
-        # df.to_csv('tag_value_pairs.csv')
         patients = 0
     
     print('\n\n')
