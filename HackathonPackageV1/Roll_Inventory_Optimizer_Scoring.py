@@ -647,7 +647,7 @@ def officialScorer(situationRoot, situationDate):
     return (totalScore, scoringBreakdown)
     
 # situationDate='2024-09-06 Week 3'
-#situationDate='2024-10-09'
+# situationDate='2024-10-09'
 # situationRoot='d:\\otapps\\inventory_dev\\root\\DataCache\\OptimizerSituations'#OLD
 # date = [
 #     '2024-09-06 Week 1',
