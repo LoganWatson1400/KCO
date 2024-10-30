@@ -1,71 +1,93 @@
-# Training Program for NN model
-from tensorflow import keras as k
-import Loss_Function as lf
-import DataProcess as dp
+import os
+import sys
+import pandas as pd
 import numpy as np
-import gc
-from keras import backend as K
-K.clear_session()
+import random
+from Roll_Inventory_Optimizer_Scoring import officialScorer
+# import Roll_Inventory_Optimizer_Scoring as scoring
 
-BATCH_SIZE = 1
-EPOCHS = 10
-
-date = [
+week = 0
+weeks = [
     '2024-09-06 Week 1',
     '2024-09-06 Week 2',
     '2024-09-06 Week 3'
-    ]
+]
 
-## Grab Data
-data = dp.processData(date[0])
-INPUT_SIZE = len(data.columns) # Number of inputs IE initial POs, inventory, etc
-## show data in cvs file
-dp.toCV(data)
+bestSchedule = 'HackathonPackageV1/BestSchedule.json'
+root = 'HackathonPackageV1/DataCache/OptimizerSituations'
+outRoot = 'HackathonPackageV1/PredDataCache/OptimizerSituations'
+staticPath = f'HackathonPackageV1/DataCache/OptimizerSituations/ {weeks[week]}/planningSchedule.json'
+            #   'HackathonPackageV1/DataCache/OptimizerSituations/2024-09-06 Week 1/planningSchedule.json'
+outPath = f'HackathonPackageV1/PredDataCache/OptimizerSituations/{weeks[week]}/planningSchedule.json'
 
-x_train = np.array(data, dtype=np.float32).reshape(BATCH_SIZE,len(data.columns))
-y_train = x_train.astype(np.float32)
-situationRoot='HackathonPackageV1\DataCache\OptimizerSituations'
-predictRoot='HackathonPackageV1\PredDataCache\OptimizerSituations'
-####MODEL####
+df = pd.read_json('HackathonPackageV1/DataCache/OptimizerSituations/2024-09-06 Week 1/planningSchedule.json')
+### Catagorical Data ###
+PUnits = df['ProductionUnit'].unique()
+PIds = df['Prod_Id'].unique()
 
-# Initialize Input Layer
-model = k.Sequential()
-model.add(k.Input(shape=INPUT_SIZE))
+### Float Values ###
+ForeStartMIN = df['ForecastStartTime'].min()
+ForeStartMAX = df['ForecastStartTime'].max()
 
-# Initialize Hidden Layer
-model.add(k.layers.Dense(INPUT_SIZE/2, activation="tanh"))
-model.add(k.layers.Dense(INPUT_SIZE/2, activation="tanh"))
-model.add(k.layers.Dense(INPUT_SIZE/2, activation="tanh"))
+ForeEndMIN = df['ForecastEndTime'].min()
+ForeEndMAX = df['ForecastEndTime'].max()
+ 
 
-# Initialize Output Layer
-model.add(k.layers.Dense(INPUT_SIZE, activation="tanh"))
 
-# OPTIONAL model check
-# model.summary()
 
-####TRAIN####
 
-## Training Loop (3 epochs = 3 weeks)
+### randomizer ###TODO
 
-autoscore = lf.autoscore_loss(predictRoot, date[0]) #Loss Function
+### Randomization function
+def randomize_value(df, column):
+    if column in ['ProductionUnit', 'Prod_Id']:
+        return np.random.choice(df[column].unique())
+    elif column == 'ForecastStartTime':
+        return np.random.uniform(ForeStartMIN, ForeStartMAX)
+    elif column == 'ForecastEndTime':
+        return np.random.uniform(ForeEndMIN, ForeEndMAX)
 
-model.compile(loss=autoscore, optimizer="adam", metrics=["accuracy"])
-# model.fit(x_train, y_train, batch_size=BATCH_SIZE, epochs=EPOCHS)
-for i in range(EPOCHS):
-    print(f' START LOOP {gc.get_count()}')
-    # model.summary()
-    print(1)
-    epoch_data = model.train_on_batch(x_train, y_train, return_dict= True)
-    print(2)
-    predictions = model.predict_on_batch(x_train)
-    print(3)
-    print(f"\nEpoch: {i+1} --- Loss: {epoch_data['loss']} --- Accuracy: {epoch_data['accuracy']} --- prediction[0][0]: {predictions[0][0]}\n")
-    dp.updatejson(date[0],predictions)
-    weights = model.get_weights()
-    model.compile(loss=autoscore, optimizer="adam", metrics=["accuracy"])
-    model.set_weights(weights)
-    K.clear_session()
-    gc.collect()
-    print(f' END LOOP {gc.get_count()}')
+# Disable
+def blockPrint():
+    sys.stdout = open(os.devnull, 'w')
+
+# Restore
+def enablePrint():
+    sys.stdout = sys.__stdout__
+
+
+(best, z) = officialScorer(root, weeks[week])
+iterations = 0
+patients = 0
+# blockPrint() ##########################################################
+while iterations < 4 and patients < 5:
+    iterations += 1
+    patients += 1
+    
+
+    new_PUnits = random.choices(PUnits, k=len(df['ProductionUnit']))
+    # new_PIds = random.choices(PIds, k=len(df['Prod_Id']))
+
+    df['ProductionUnit'] = new_PUnits
+    # df['Prod_Id'] = new_PIds
+
+    #TODO random start and end time
+
+    df.to_json(outPath, indent=4)
+    (loss, z) = officialScorer(outRoot, weeks[week]) #week is default #TODO can use breakdown to optimize
+    # print(f'loss: {loss}: breakdown: {breakdown}')
+    if loss > best:
+        best = loss
+        df.to_json(bestSchedule, indent=4)
+        df.to_csv('tag_value_pairs.csv')
+        patients = 0
+    
+    print('\n\n')
+# enablePrsint() ########################################################
+
+print(f'Best Score achived: {best}')
+temp = pd.read_json(bestSchedule)
+temp.to_json(outPath, indent=4)
+officialScorer(outRoot, weeks[week])
 
 
