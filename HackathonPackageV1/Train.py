@@ -1,10 +1,10 @@
+import glob
 import os
 import sys
 import pandas as pd
 import numpy as np
 import random
 from Roll_Inventory_Optimizer_Scoring import officialScorer
-# import Roll_Inventory_Optimizer_Scoring as scoring
 
 week = 0
 weeks = [
@@ -13,14 +13,19 @@ weeks = [
     '2024-09-06 Week 3'
 ]
 
-bestSchedule = 'HackathonPackageV1/BestSchedule.json'
-root = 'HackathonPackageV1/DataCache/OptimizerSituations'
-outRoot = 'HackathonPackageV1/PredDataCache/OptimizerSituations'
-staticPath = f'HackathonPackageV1/DataCache/OptimizerSituations/ {weeks[week]}/planningSchedule.json'
-            #   'HackathonPackageV1/DataCache/OptimizerSituations/2024-09-06 Week 1/planningSchedule.json'
-outPath = f'HackathonPackageV1/PredDataCache/OptimizerSituations/{weeks[week]}/planningSchedule.json'
+#Static paths
+staticPath = f'HackathonPackageV1\\DataCache\\OptimizerSituations\\ {weeks[week]}\\planningSchedule.json'
+root = 'HackathonPackageV1\\DataCache\\OptimizerSituations'
+StaticPaths = glob.glob(root + f'\\{weeks[week]}\\*.json')
 
-df = pd.read_json('HackathonPackageV1/DataCache/OptimizerSituations/2024-09-06 Week 1/planningSchedule.json')
+#Output Paths
+outRoot = 'HackathonPackageV1\\PredDataCache\\OptimizerSituations'
+outPath = f'HackathonPackageV1\\PredDataCache\\OptimizerSituations\\{weeks[week]}\\planningSchedule.json'
+
+#TempPaths
+bestSchedule = 'HackathonPackageV1\\BestSchedule.json'
+
+df = pd.read_json('HackathonPackageV1\\DataCache\\OptimizerSituations\\2024-09-06 Week 1\\planningSchedule.json')
 ### Catagorical Data ###
 PUnits = df['ProductionUnit'].unique()
 PIds = df['Prod_Id'].unique()
@@ -65,15 +70,15 @@ while iterations < 4 and patients < 5:
     patients += 1
     
 
-    new_PUnits = random.choices(PUnits, k=len(df['ProductionUnit']))
+    # new_PUnits = random.choices(PUnits, k=len(df['ProductionUnit']))
     # new_PIds = random.choices(PIds, k=len(df['Prod_Id']))
 
-    df['ProductionUnit'] = new_PUnits
+    # df['ProductionUnit'] = new_PUnits
     # df['Prod_Id'] = new_PIds
 
     #TODO random start and end time
 
-    df.to_json(outPath, indent=4)
+    # df.to_json(outPath, indent=4)
     (loss, z) = officialScorer(outRoot, weeks[week]) #week is default #TODO can use breakdown to optimize
     # print(f'loss: {loss}: breakdown: {breakdown}')
     if loss > best:
@@ -82,7 +87,7 @@ while iterations < 4 and patients < 5:
         df.to_csv('tag_value_pairs.csv')
         patients = 0
     
-    print('\n\n')
+    print('\\n\\n')
 # enablePrsint() ########################################################
 
 print(f'Best Score achived: {best}')
