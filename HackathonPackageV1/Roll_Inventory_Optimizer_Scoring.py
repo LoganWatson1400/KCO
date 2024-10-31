@@ -251,8 +251,13 @@ def officialScorer(situationRoot, situationDate):
     #Extend the Domain for the consumption by adding an "Average PO" at the end of each grade's last PO
     extendedDomain=pd.DataFrame(index=pd.date_range(runoutGradeSampled.index[-1]+timedelta(minutes=1),runoutGradeSampled.index[0]+timedelta(days=14),freq='min'),columns=runoutGradeSampled.columns)
     runoutGradeSampled=pd.concat([runoutGradeSampled,extendedDomain])
+    count = 0
     for grade in runoutGradeEndtimesLookup.index:
+        if(count == 1000):
+            print("fuck...")
+            break
         runoutGradeSampled.loc[runoutGradeEndtimesLookup[grade]:,grade]=runoutGradeRates.fillna(0).mean()[grade]
+        count+=1
 
     runoutGradeYardageConsumed=runoutGradeSampled.fillna(0).cumsum()
     # runoutGradeYardageRemaining=inventoryTotalLength-runoutGradeYardageConsumed*(1+scrapFactor) #Multiply one of these by the scrap percentage to get total Usable Yards
@@ -573,8 +578,8 @@ def officialScorer(situationRoot, situationDate):
     for criteria in scoringBreakdown:
         totalScore=totalScore+scoringBreakdown[criteria]
 
-    # print(pd.Series(scoringBreakdown))
-    # print(totalScore)
+    print(pd.Series(scoringBreakdown))
+    print(totalScore)
 
     # import pickle
     # forecastRoot='d:\\otapps\\inventory_dev\\root\\DataCache\\HistoricalForecasts'
