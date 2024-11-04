@@ -41,7 +41,7 @@ Ignore this. Implement this when we have a working model.
 ## How to Use KCO
 --->
 
-##DISCLAIMER
+### DISCLAIMER
 The final code in this repository relies on ChatGPT code. Prior commits/versions were primarily hand-coded.
 If you have any questions about this you can contact us at the following emails...
 Jack, pjharmer@uwm.edu
