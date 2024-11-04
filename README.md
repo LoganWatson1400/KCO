@@ -52,7 +52,7 @@ Logan Watson\
 Patrick "Jack" Harmer
 
 ## References
-AI USED: ChatGPT
+AI USED: ChatGPT\
 [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)\
 [Python PEP8 Style Guide](https://peps.python.org/pep-0008/)
     
