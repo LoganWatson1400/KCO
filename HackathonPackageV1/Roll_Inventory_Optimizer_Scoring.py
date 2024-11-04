@@ -578,8 +578,8 @@ def officialScorer(situationRoot, situationDate):
     for criteria in scoringBreakdown:
         totalScore=totalScore+scoringBreakdown[criteria]
 
-    print(pd.Series(scoringBreakdown))
-    print(totalScore)
+    # print(pd.Series(scoringBreakdown))
+    # print(totalScore)
 
     # import pickle
     # forecastRoot='d:\\otapps\\inventory_dev\\root\\DataCache\\HistoricalForecasts'
