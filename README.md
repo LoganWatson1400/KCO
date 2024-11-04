@@ -41,11 +41,18 @@ Ignore this. Implement this when we have a working model.
 ## How to Use KCO
 --->
 
+##DISCLAIMER
+The final code in this repository relies on ChatGPT code. Prior commits/versions were primarily hand-coded.
+If you have any questions about this you can contact us at the following emails...
+Jack, pjharmer@uwm.edu
+Logan, lawatson.edu
+
 ## Contributors
 Logan Watson\
 Patrick "Jack" Harmer
 
 ## References
+AI USED: ChatGPT
 [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)\
 [Python PEP8 Style Guide](https://peps.python.org/pep-0008/)
     
