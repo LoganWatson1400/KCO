@@ -33,7 +33,7 @@ weeks = [
 ]
 score_cache = {}
 
-MAX_TIME = 28000
+MAX_TIME = 60
 POPULATION_SIZE = 10
 TOURNAMENT_SIZE = 5
 ELITE_COUNT = 3
