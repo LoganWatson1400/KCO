@@ -651,8 +651,7 @@ def officialScorer(situationRoot, situationDate):
     return (totalScore, scoringBreakdown)
     
 situationDate='2024-09-06 Week 3'
-#situationDate='2024-10-09'
-situationRoot=r'D:\otapps\inventory_dev\HackathonPackageV3\DataCache\OptimizerSituations'
+situationRoot=r'HackathonPackageV1\\DataCache\\OptimizerSituations'
 totalScore, scoringBreakdown = officialScorer(situationRoot,situationDate)
 print("Finished")
 
