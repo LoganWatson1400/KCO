@@ -25,7 +25,7 @@ from Roll_Inventory_Optimizer_Scoring import officialScorer
 from datetime import timedelta
 
 # Constants
-week = 2
+week = 0
 weeks = [
     '2024-09-06 Week 1',
     '2024-09-06 Week 2',
