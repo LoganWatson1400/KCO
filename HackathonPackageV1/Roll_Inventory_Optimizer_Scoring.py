@@ -59,7 +59,7 @@ def importSituation(situationPath): #Imports the Situation from each Week's Dire
     scrapFactor=pd.read_json(situationPath+r'\scrapFactor.json',typ='series')
     currentTimeUTC=pd.read_json(situationPath+r'\currentTimeUTC.json',typ='series')
     currentTimeUTC=currentTimeUTC['currentTimeUTC'].to_pydatetime().replace(tzinfo=pytz.utc)
-    print('Data Imported and Formatted')
+    # print('Data Imported and Formatted')
     
     return (planningSchedule,initialPOs,reservedTimes,plannedDemandConverting,plannedDemandTM,inventoryGradeCount,planningRate,SKU_Pull_Rate,SKU_Converting_Specs,SKU_TM_Specs,scrapFactor,currentTimeUTC)
 
@@ -231,7 +231,7 @@ def officialScorer(situationRoot, situationDate):
     runoutGradeRates=pd.DataFrame(columns=SKU_Forecasting['Grade'].unique())
     
     #Key Point 7
-    print("Calculate Intervals")
+    # print("Calculate Intervals")
     for rangeStart in forecastRanges:
         hitTimes=(SKU_Forecasting['ModelStartTime']<=rangeStart) & (rangeStart<SKU_Forecasting['ModelEndTime']) #No additional checks are necessary because it is impossible for an SKU to start or end in between the Forecast Ranges
         # forecastAssetGrades.loc[rangeStart]=SKU_Forecasting[hitTimes].drop_duplicates('ProductionUnit').set_index('ProductionUnit')['Grade'] #There will sometimes be overlap in the run schedules for a single line. We are currently assuming that the first PO has priority over the second PO but the opposite may be true as well. *ASSUMPTION* #Re-evaluate at a later date
@@ -240,7 +240,7 @@ def officialScorer(situationRoot, situationDate):
         #runoutGradeRates.loc[rangeStart]=SKU_Forecasting[hitTimes][SKU_Forecasting[hitTimes]['ProductionUnit'].isin(productionUnitWinders)].drop_duplicates('ProductionUnit').groupby('Grade')['PullRate'].sum() #Includes drop_duplicates. See next line vvv for explaination for why this was removed.
         forecastGradeRates.loc[rangeStart]=SKU_Forecasting[hitTimes].groupby('Grade')['PullRate'].sum() #Unlike with forecastAssetRates, forecastGradeRates does not drop duplicates because that will cut off the next PO if there is overlap. We assume for the sake of calculation, that multiple PO's can run on the same Line even though this is impossible. *ASSUMPTION* #Re-evaluate at a later date
         runoutGradeRates.loc[rangeStart]=SKU_Forecasting[hitTimes][SKU_Forecasting[hitTimes]['ProductionUnit'].isin(productionUnitWinders)].groupby('Grade')['PullRate'].sum()
-    print("Calculate Intervals Finished")
+    # print("Calculate Intervals Finished")
     runoutGradeEndtimes=SKU_Forecasting[SKU_Forecasting['ProductionUnit'].isin(productionUnitWinders)].sort_values('ModelEndTime').groupby('Grade').tail(1)
     runoutGradeEndtimesLookup=runoutGradeEndtimes.set_index('Grade')['ModelEndTime']
 
@@ -257,7 +257,7 @@ def officialScorer(situationRoot, situationDate):
     runoutGradeYardageConsumed=runoutGradeSampled.fillna(0).cumsum()
     # runoutGradeYardageRemaining=inventoryTotalLength-runoutGradeYardageConsumed*(1+scrapFactor) #Multiply one of these by the scrap percentage to get total Usable Yards
     # runoutGradeRollsRemaining=runoutGradeYardageRemaining/SKU_TM_Specs['Inv_Length'] #When inventory is less then 20, replace this with the average of the other roll sizes or some other fallback
-    # #print(runoutGradeRollsRemaining)
+    # ## print(runoutGradeRollsRemaining)
     # gradeHasUpcomingPOs=(runoutGradeRollsRemaining.iloc[0]-runoutGradeRollsRemaining.iloc[-1])>0
     # runoutTime=runoutGradeRollsRemaining.apply(lambda x: x[x<0].head(1).index,axis=0)
     # runoutTime.loc[runoutTime.apply(len)==0]=[[None]]*len(runoutTime[runoutTime.apply(len)==0])
@@ -277,7 +277,7 @@ def officialScorer(situationRoot, situationDate):
     forecastGradeYardageRemaining=inventoryTotalLength-forecastGradeYardageConsumed*(1+scrapFactor) #Multiply one of these by the scrap percentage to get total Usable Yards. Maybe apply the scrap percentage only to the converting component of the forecastGradeYardageConsumed which is comprised of a TM and Converting component
     #Key Point 9
     forecastGradeRollsRemaining=forecastGradeYardageRemaining/SKU_TM_Specs['Inv_Length'] #When inventory is less then 20, replace this with the average of the other roll sizes or some other fallback
-    #print(forecastGradeRollsRemaining)
+    ## print(forecastGradeRollsRemaining)
     forecastTime=forecastGradeRollsRemaining.apply(lambda x: x[x<0].head(1).index,axis=0)
     forecastTime.loc[forecastTime.apply(len)==0]=[[None]]*len(forecastTime[forecastTime.apply(len)==0])
     forecastTime=forecastTime.apply(lambda x: x[0])
@@ -336,7 +336,7 @@ def officialScorer(situationRoot, situationDate):
     runoutGradeYardageConsumedResampled[gradeNAs.add_suffix('_Min').keys()]=runoutGradeYardageConsumedResampled[gradeNAs.keys()]
     
     #Key Point 10
-    print("Calculate Time Domain")
+    # print("Calculate Time Domain")
     forecastTimeRemaining=pd.DataFrame(columns=forecastGradeYardageResampled.columns)
     for i,t in enumerate(forecastGradeYardageResampled.index):  #...Then it recalculates that cumsum at every future inventory level by simply subtracting out the sum of the preceeding consumption rates for the timestamp being calculated for. This makes it more efficient then recalculating the cumsum on the entire slice.
         if i==0:
@@ -356,7 +356,7 @@ def officialScorer(situationRoot, situationDate):
         forecastTimeRemaining.loc[t]=forecastRemainingTimeHours
         # if (t-currentTimeUTC.replace(second=0,microsecond=0,tzinfo=None))>timedelta(days=2): Test the run out calculation in the middle of the week
         #     0/0
-    print("Calculate Time Domain Finished")
+    # print("Calculate Time Domain Finished")
     # runoutGradeTimeToEndtime=runoutGradeEndtimesLookup.apply(lambda x: list((x-forecastTimeRemaining.index).total_seconds()/3600))
     # runoutGradeTimeToEndtime=pd.DataFrame(runoutGradeTimeToEndtime.values.tolist(), index=runoutGradeTimeToEndtime.index, columns=forecastTimeRemaining.index).T
     # runoutGradeTimeToEndtime[gradeNAs.keys()[~gradeNAs.keys().isin(runoutGradeTimeToEndtime.columns)]]=None #Add missing grades
@@ -377,7 +377,7 @@ def officialScorer(situationRoot, situationDate):
     forecastTimeRemainingFullCopy=forecastTimeRemainingFull.copy()
     #forecastTimeRemainingFull=forecastTimeRemainingFull.astype('timedelta64[h]')
     forecastTimeRemainingFull=forecastTimeRemainingFull.apply(pd.to_timedelta,unit='hours', errors='raise')
-    print("Recalculate Inventory Domain")
+    # print("Recalculate Inventory Domain")
     forecastGradeYardageRemainingFull=pd.DataFrame(columns=runoutGradeYardageConsumedResampled.columns)
     for i,t in enumerate(runoutGradeYardageConsumedResampled.index): 
         if (forecastTimeRemainingFull.index!=t).all(): #If t exceeds the timeIndexes of forecastTimeRemainingFull, break out of the loop
@@ -385,13 +385,13 @@ def officialScorer(situationRoot, situationDate):
         runoutTime=t+forecastTimeRemainingFull.loc[t]
         for grade in runoutGradeYardageConsumedResampled.columns:
             if pd.isnull(runoutTime[grade]) or not runoutGradeYardageConsumedResampled.index.isin([runoutTime[grade]]).any(): #Sometimes the runout time is beyond the indexes of the runoutGradeYardageConsumedResampled dataframe which needs to be handled. Replaces the runoutYardage with NA 
-                #print(runoutGradeYardageConsumedResampled.index.isin([runoutTime[grade]]).any())
+                ## print(runoutGradeYardageConsumedResampled.index.isin([runoutTime[grade]]).any())
                 runoutYardage=np.NaN
             else:
                 runoutYardage=runoutGradeYardageConsumedResampled.loc[runoutTime[grade],grade]
             yardsConsumed=runoutYardage-runoutGradeYardageConsumedResampled.loc[t,grade]#-runoutGradeYardageConsumedResampled.loc[t-timedelta(hours=0)]
             forecastGradeYardageRemainingFull.loc[t,grade]=yardsConsumed
-    print("Recalculate Inventory Domain Finished")
+    # print("Recalculate Inventory Domain Finished")
     forecastGradeRollsRemainingFull=forecastGradeYardageRemainingFull/SKU_TM_Specs_Full['Inv_Length']
     forecastGradeRollsRemainingFullSevenDay=forecastGradeRollsRemainingFull.copy()
     forecastGradeRollsRemainingFullSevenDay.index=forecastGradeRollsRemainingFullSevenDay.index-timedelta(days=7)
@@ -407,11 +407,11 @@ def officialScorer(situationRoot, situationDate):
 
     # forecastAssetGrades=forecastAssetGrades.resample('S').ffill()[::60]
     # forecastAssetGrades.index=forecastAssetGrades.index.floor('min')
-    # print('Computationally Expensive Remapping')
+    # # print('Computationally Expensive Remapping')
     # forecastAssetGradeYardage=forecastAssetGrades.apply(lambda x: x.map(forecastGradeYardageRemaining.loc[x.name]),axis=1)
-    # print('Computationally Expensive Remapping Finished')
+    # # print('Computationally Expensive Remapping Finished')
     # #forecastAssetTimes=forecastAssetGradeYardage.apply(lambda x: x[x<0].head(1).index)
-    # print("Calculate OOP Times")
+    # # print("Calculate OOP Times")
     # forecastAssetTimes=pd.Series() #Old code would break if all lines had OOP expected. Required a full rewrite
     # for asset in forecastAssetGradeYardage:
     #     assetTime=forecastAssetGradeYardage[asset][forecastAssetGradeYardage[asset]<0].head(1).index
@@ -420,7 +420,7 @@ def officialScorer(situationRoot, situationDate):
     #     else:
     #         assetTime=assetTime[0]
     #     forecastAssetTimes[asset]=assetTime
-    # print("Calculate OOP Times Finished")
+    # # print("Calculate OOP Times Finished")
     # #forecastAssetTimes.loc[forecastAssetTimes.apply(len)==0]=[[None]]*len(forecastAssetTimes[forecastAssetTimes.apply(len)==0])
     # #forecastAssetTimes=forecastAssetTimes.apply(lambda x: x[0])
     # if len(forecastAssetTimes)==0:
@@ -430,17 +430,17 @@ def officialScorer(situationRoot, situationDate):
     # OOPTimeHours=OOPTime.dt.total_seconds()/3600
     # OOPTimeHours[OOPTimeHours<0]=0
     # OOPTimeHours=OOPTimeHours.fillna(-1)
-    # print("Calculate OOP Grades")
+    # # print("Calculate OOP Grades")
     # OOPAssetGrade=pd.Series()
     # for asset in forecastAssetTimes.index:
     #     if pd.isnull(forecastAssetTimes[asset]):
     #         OOPAssetGrade[asset]=None
     #     else:
     #         OOPAssetGrade[asset]=forecastAssetGrades.loc[forecastAssetTimes[asset],asset]
-    # print("Calculate OOP Grades Finished")
+    # # print("Calculate OOP Grades Finished")
 
     #Key Point 12
-    print("Calculate Score")
+    # print("Calculate Score")
     proposedSchedule=SKU_Forecasting[SKU_Forecasting['ProductionPlanStatus']=='Proposed Schedule']
     TMPOMinimumRuntime2hr=2*60
     HoursBelowTMPOMinimumRuntime2hr=(TMPOMinimumRuntime2hr-proposedSchedule[(proposedSchedule['PredictedRemainingDuration']<TMPOMinimumRuntime2hr) & proposedSchedule['ProductionUnit'].isin(productionUnitTMs)]['PredictedRemainingDuration']).sum()/60
@@ -577,8 +577,8 @@ def officialScorer(situationRoot, situationDate):
     for criteria in scoringBreakdown:
         totalScore=totalScore+scoringBreakdown[criteria]
 
-    print(pd.Series(scoringBreakdown))
-    print(totalScore)
+    # print(pd.Series(scoringBreakdown))
+    # print(totalScore)
 
     # import pickle
     # forecastRoot='d:\\otapps\\inventory_dev\\root\\DataCache\\HistoricalForecasts'
@@ -647,11 +647,11 @@ def officialScorer(situationRoot, situationDate):
             plt.legend(loc='upper right')
         return
 
-    print("Finished")
+    # print("Finished")
     return (totalScore, scoringBreakdown)
     
 # situationDate='2024-09-06 Week 3'
 # situationRoot=r'HackathonPackageV1\\DataCache\\OptimizerSituations'
 # totalScore, scoringBreakdown = officialScorer(situationRoot,situationDate)
-# print("Finished")
+# # print("Finished")
 
