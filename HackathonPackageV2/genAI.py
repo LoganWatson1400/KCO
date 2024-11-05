@@ -33,6 +33,7 @@ weeks = [
 ]
 score_cache = {}
 
+MAX_GENS = 20
 MAX_TIME = 600
 POPULATION_SIZE = 10
 TOURNAMENT_SIZE = 5
@@ -119,12 +120,12 @@ def hasOverlap(dfStart, dfEnd, PU):
         us = pd.to_datetime(u['start'], unit='ms')
         ue = pd.to_datetime(u['end'], unit='ms')
 
-        print(f'USED START: {us} -- (NEW START: {dfStart}, NEW END: {dfEnd}) -- USED END: {ue}', end='')
+        # print(f'USED START: {us} -- (NEW START: {dfStart}, NEW END: {dfEnd}) -- USED END: {ue}', end='')
         if dateBetween(pd.to_datetime(u['start'], unit='ms'), dfStart, dfEnd, pd.to_datetime(u['end'], unit='ms')):
-            print(' --- OVERLAP')
+            # print(' --- OVERLAP')
             return True
-        else:
-            print()
+        # else:
+            # print()
     return False
 
 def removeAllOverlap(schedule):
@@ -233,7 +234,7 @@ def genetic_algorithm():
     generation = 0
     previous_best_score = float('inf')
 
-    while total_time < MAX_TIME:
+    while generation <= MAX_GENS: # total_time < MAX_TIME:
         generation += 1
 
         # Check for overlapping intervals
