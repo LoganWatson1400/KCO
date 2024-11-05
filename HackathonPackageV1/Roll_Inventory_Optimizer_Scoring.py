@@ -650,8 +650,8 @@ def officialScorer(situationRoot, situationDate):
     print("Finished")
     return (totalScore, scoringBreakdown)
     
-situationDate='2024-09-06 Week 3'
-situationRoot=r'HackathonPackageV1\\DataCache\\OptimizerSituations'
-totalScore, scoringBreakdown = officialScorer(situationRoot,situationDate)
-print("Finished")
+# situationDate='2024-09-06 Week 3'
+# situationRoot=r'HackathonPackageV1\\DataCache\\OptimizerSituations'
+# totalScore, scoringBreakdown = officialScorer(situationRoot,situationDate)
+# print("Finished")
 
