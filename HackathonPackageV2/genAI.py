@@ -33,7 +33,8 @@ weeks = [
 ]
 score_cache = {}
 
-MAX_TIME = 28000
+MAX_GENS = 20
+MAX_TIME = 600
 POPULATION_SIZE = 10
 TOURNAMENT_SIZE = 5
 ELITE_COUNT = 3
@@ -50,11 +51,11 @@ MAX_DATE = pd.to_datetime(MAX_DATE, unit='ms')
 
 
 # Paths and initial data load
-root = 'HackathonPackageV1\\DataCache\\OptimizerSituations'
+root = 'HackathonPackageV2\\DataCache\\OptimizerSituations'
 staticPath = f'{root}\\{weeks[week]}\\planningSchedule.json'
 InitialPaths = {os.path.basename(path): path for path in glob.glob(root + f'\\{weeks[week]}\\*.json')}
-outRoot = 'HackathonPackageV1\\PredDataCache\\OptimizerSituations'
-outSchedule = f'HackathonPackageV1\\PredDataCache\\OptimizerSituations\\{weeks[week]}\\planningSchedule.json'
+outRoot = 'HackathonPackageV2\\PredDataCache\\OptimizerSituations'
+outSchedule = f'HackathonPackageV2\\PredDataCache\\OptimizerSituations\\{weeks[week]}\\planningSchedule.json'
 weights_filename = 'weights.json'  # Filename to save/load weights
 
 # Load initial data
@@ -116,8 +117,15 @@ def dateBetween(start1, start2, end2, end1):
 def hasOverlap(dfStart, dfEnd, PU):
     used = getUsed(PU)
     for u in used:
+        us = pd.to_datetime(u['start'], unit='ms')
+        ue = pd.to_datetime(u['end'], unit='ms')
+
+        # print(f'USED START: {us} -- (NEW START: {dfStart}, NEW END: {dfEnd}) -- USED END: {ue}', end='')
         if dateBetween(pd.to_datetime(u['start'], unit='ms'), dfStart, dfEnd, pd.to_datetime(u['end'], unit='ms')):
+            # print(' --- OVERLAP')
             return True
+        # else:
+            # print()
     return False
 
 def removeAllOverlap(schedule):
@@ -173,11 +181,11 @@ def mutate(schedule, mutation_rate, weights):
         new_start_time = start_time + pd.Timedelta(hours=time_shift)
 
         # Check against reserved times
-        while new_start_time + pd.Timedelta(hours=2) >=  MAX_DATE or hasOverlap(new_start_time, new_start_time + pd.Timedelta(hours=2), production_unit):
-            if new_start_time + pd.Timedelta(hours=2) >=  MAX_DATE:
+        while new_start_time + pd.Timedelta(days=2) >=  MAX_DATE or hasOverlap(new_start_time, new_start_time + pd.Timedelta(days=2), production_unit):
+            if new_start_time + pd.Timedelta(days=2) >=  MAX_DATE:
                 new_start_time = MIN_DATE
             else:
-                new_start_time += pd.Timedelta(hours=1)
+                new_start_time += pd.Timedelta(hours=time_shift)
 
 
         schedule.at[row, 'ForecastStartTime'] = int(new_start_time.value / 1e6)
@@ -220,13 +228,13 @@ def update_weights(best_score):
 def genetic_algorithm():
     total_time = 0
     initial_schedule = readJson().copy()  # Read initial schedule
-    initial_schedule = removeAllOverlap(initial_schedule)
+    # initial_schedule = removeAllOverlap(initial_schedule)
     population = [{'schedule': mutate(initial_schedule.copy(), BASE_MUTATION_RATE, [1.0] * len(initial_schedule)), 'score': None} for _ in range(POPULATION_SIZE)]
 
     generation = 0
     previous_best_score = float('inf')
 
-    while total_time < MAX_TIME:
+    while generation <= MAX_GENS: # total_time < MAX_TIME:
         generation += 1
 
         # Check for overlapping intervals
