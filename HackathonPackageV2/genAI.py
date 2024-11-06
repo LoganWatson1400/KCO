@@ -25,7 +25,7 @@ from Roll_Inventory_Optimizer_Scoring import officialScorer
 from datetime import timedelta
 
 # Constants
-week = 0
+week = 1
 weeks = [
     '2024-09-06 Week 1',
     '2024-09-06 Week 2',
@@ -61,7 +61,7 @@ weights_filename = 'weights.json'  # Filename to save/load weights
 # Load initial data
 df = pd.read_json(staticPath)
 IData = pd.read_json(InitialPaths['initialPOs.json'])
-SKUDict = pd.read_json(InitialPaths['SKU_Pull_Rate_Dict.json'])
+SKUDict = pd.read_json(InitialPaths['SKU_Converting_Specs_Dict.json'])
 reservedTimes = pd.read_json(InitialPaths['reservedTimes.json'])
 df['Prod_Id']
 df['ForecastStartTime']

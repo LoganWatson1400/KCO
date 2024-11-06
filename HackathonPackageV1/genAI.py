@@ -33,7 +33,7 @@ weeks = [
 ]
 score_cache = {}
 
-MAX_TIME = 28000
+MAX_TIME = 600
 POPULATION_SIZE = 10
 TOURNAMENT_SIZE = 5
 ELITE_COUNT = 3
@@ -60,7 +60,7 @@ weights_filename = 'weights.json'  # Filename to save/load weights
 # Load initial data
 df = pd.read_json(staticPath)
 IData = pd.read_json(InitialPaths['initialPOs.json'])
-SKUDict = pd.read_json(InitialPaths['SKU_Pull_Rate_Dict.json'])
+SKUDict = pd.read_json(InitialPaths['SKU_Converting_Specs_Dict.json'])
 reservedTimes = pd.read_json(InitialPaths['reservedTimes.json'])
 df['Prod_Id']
 df['ForecastStartTime']
